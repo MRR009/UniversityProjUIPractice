@@ -1,0 +1,55 @@
+  <!-- Copyright 2022 Google LLC. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at https://angular.io/license -->
+
+<!--Navbar-->
+<mdb-navbar SideClass="nav-container navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><mdb-icon fas icon="university" class="icon"></mdb-icon></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    
+    <!-- Dropdown -->
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Btech<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Mtech<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+        </div>
+      </li>
+      <!-- Links -->
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" href="#">My Profile</a>
+              <div class="divider dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
