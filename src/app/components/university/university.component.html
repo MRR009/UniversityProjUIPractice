@@ -1,2 +1,10 @@
-<p>university works!</p>
-<button (click)="spring()" >click me</button>
+<div class="form">
+    <form [formGroup]="universityForm" (ngSubmit) = "spring()">
+        <p>
+            <label for="unicode">university code</label>
+            <input class="form-control input" type="text" id="unicode" name="uniCode" formControlName="uniCode">
+        </p>
+        <button type="submit">click me</button>
+    </form>
+</div>
+

@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
   `],
   template: `<div class="home-container">
       <sidebar class="width" ></sidebar>
-      <app-university></app-university>
+      <!-- <university></university> -->
     </div>
   `
 })

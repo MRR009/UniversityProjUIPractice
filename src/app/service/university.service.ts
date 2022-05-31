@@ -7,29 +7,31 @@ import { Observable } from 'rxjs';
 })
 export class UniversityService {
 
-
-
   private baseUrl = 'http://localhost:9099/university';
   constructor(private http: HttpClient) { }
 
   getUniversity(uniCode: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getbycode/`+`${uniCode}`);
+    return this.http.get(`${this.baseUrl}/getbycode?uniCode={${uniCode}`);
   }
 
+  getAllUniversities():Observable<any>{
+    return this.http.get(`${this.baseUrl}/getall`);
+  }
 
-  createEmployee(employee: Object): Observable<Object> {
+  getCollegesInUniversity(uniCode: String):Observable<any>{
+    return this.http.get(`${this.baseUrl}/collegesinuniversity?uniCode=${uniCode}`)
+  }
+
+  createUniversity(employee: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, employee);
   }
 
-  updateEmployee(id: number, value: any): Observable<Object> {
+  updateUniversity(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  deleteEmployee(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  depricateUniversity(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getEmployeesList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }
 }

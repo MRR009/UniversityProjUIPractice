@@ -1,27 +1,50 @@
-<ul class="navbar-nav ml-auto nav-flex-icons ">
-    <a color="primary" class="waves-light m20-right" type="button" (click)="test.toggle()" mdbWavesEffect>
-        Stream
-        <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
-      <div class="" mdbCollapse #test="bs-collapse">
-        <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" formControlName="studentName">
-            <label for="studentName">Engineering</label>
-        </p>
-        <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" formControlName="studentName">
+<form>
+    <ul class="navbar-nav ml-auto nav-flex-icons ">
+        
+        <a color="primary" class="waves-light m20-right"type="button" (click)="test.toggle()"  mdbWavesEffect>
+            university <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
+        <div class="" mdbCollapse #test="bs-collapse">
+            <p class="fm-container" *ngFor = "let uni of allUni let i=index">
+                <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university" (change)="onCheckboxChangeUni($event)">
+                <label for="university">{{uni.universityName}}</label>
+            </p> 
+        </div> 
+    </ul>
+</form>
+
+<form>
+    <ul class="navbar-nav ml-auto nav-flex-icons ">
+    
+        <a color="primary" class="waves-light m20-right"type="button" (click)="test.toggle()"  mdbWavesEffect>
+            Stream <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
+        <div class="" mdbCollapse #test="bs-collapse">
+            <p class="fm-container" *ngFor = "let stream of allStreams let i=index">
+                <input class="checkbox" type="checkbox" id="stream" [value]="stream.streamCode" name="stream" (change)="onCheckboxChangeStrm($event)">
+                <label for="stream">{{stream.streamCode}}</label>
+            </p> 
+        </div> 
+    </ul>
+</form>
+
+
+<!-- <li *ngFor = "let book of books let i=index">
+            {{ i+1 }} - {{ book.name }}
+          </li> -->
+
+
+          <!-- <p class="fm-container">
+            <input class="checkbox" type="checkbox" id="studentName" name="studentName" >
             <label for="studentName">Arts</label>
         </p>
         <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" formControlName="studentName">
+            <input class="checkbox" type="checkbox" id="studentName" name="studentName" >
             <label for="studentName">Management</label>
         </p>
         <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" formControlName="studentName">
+            <input class="checkbox" type="checkbox" id="studentName" name="studentName" >
             <label for="studentName">Science</label>
         </p>
         <p class="fm-container">
             <input class="checkbox" type="checkbox" id="studentName" name="studentName" formControlName="studentName">
             <label for="studentName">Commerce</label>
-        </p>
-      </div>
-  </ul>
+        </p> -->

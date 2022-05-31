@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'sidebar',
   template: `<filters></filters>
-    <filters></filters>
     `,
   styleUrls: ['./sidebar.component.scss']
 })
