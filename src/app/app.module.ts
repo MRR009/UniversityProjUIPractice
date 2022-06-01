@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UniversityComponent } from './components/university/university.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UniversityComponent } from './components/university/university.componen
     HomeComponent,
     FiltersComponent,
     SidebarComponent,
-    UniversityComponent
+    UniversityComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

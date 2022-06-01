@@ -1,23 +1,21 @@
 <form>
     <ul class="navbar-nav ml-auto nav-flex-icons ">
         
-        <a color="primary" class="waves-light m20-right"type="button" (click)="test.toggle()"  mdbWavesEffect>
+        <a color="primary" class="waves-light m20-right"type="button" (click)="university.toggle()"  mdbWavesEffect>
             university <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
-        <div class="" mdbCollapse #test="bs-collapse">
+        <div class="mt-2" mdbCollapse #university="bs-collapse">
             <p class="fm-container" *ngFor = "let uni of allUni let i=index">
                 <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university" (change)="onCheckboxChangeUni($event)">
                 <label for="university">{{uni.universityName}}</label>
             </p> 
         </div> 
     </ul>
-</form>
-
-<form>
+    <br>
     <ul class="navbar-nav ml-auto nav-flex-icons ">
     
-        <a color="primary" class="waves-light m20-right"type="button" (click)="test.toggle()"  mdbWavesEffect>
+        <a color="primary" class="waves-light m20-right"type="button" (click)="streams.toggle()"  mdbWavesEffect>
             Stream <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
-        <div class="" mdbCollapse #test="bs-collapse">
+        <div class="mt-2" mdbCollapse #streams="bs-collapse">
             <p class="fm-container" *ngFor = "let stream of allStreams let i=index">
                 <input class="checkbox" type="checkbox" id="stream" [value]="stream.streamCode" name="stream" (change)="onCheckboxChangeStrm($event)">
                 <label for="stream">{{stream.streamCode}}</label>
@@ -25,6 +23,7 @@
         </div> 
     </ul>
 </form>
+
 
 
 <!-- <li *ngFor = "let book of books let i=index">

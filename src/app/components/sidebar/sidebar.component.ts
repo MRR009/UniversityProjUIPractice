@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StreamService } from 'src/app/service/stream.service';
+import { UniversityService } from 'src/app/service/university.service';
 
 @Component({
   selector: 'sidebar',
@@ -8,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  allUnip: any
+  allStreamsp :any
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
