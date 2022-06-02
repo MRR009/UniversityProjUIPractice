@@ -8,8 +8,16 @@ import {MaterialExampleModule} from '../material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: "" , redirectTo:"home",pathMatch: "full"},
+  {path: "home" , component: HomeComponent },
+  {path: "filters" , component: FiltersComponent },
+  {path: "sidebar" , component: SidebarComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),

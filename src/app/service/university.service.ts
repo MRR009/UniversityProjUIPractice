@@ -1,14 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
+import { University } from '../entity/university.entity';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UniversityService {
 
+  private universities$ = new BehaviorSubject<University[]>([])
+
+
   private baseUrl = 'http://localhost:9099/university';
   constructor(private http: HttpClient) { }
+
+  public init(): void {
+    this.http.get<University[]>('http://localhost:9099/university/getall').subscribe((universities) => {
+      this.universities$.next(universities);
+    })
+  }
+
+  // public get newUniversities(): Observable<University[]>{
+  //   return this.universities$.pipe(
+  //     map((universities) => universities.filter((university) => university.isNew))
+  //   )
+  // }
+
+  public getUniversities(): Observable<University[]>{
+      return this.universities$;
+  }
 
   getUniversity(uniCode: String): Observable<any> {
     return this.http.get(`${this.baseUrl}/getbycode?uniCode={${uniCode}`);

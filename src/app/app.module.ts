@@ -16,6 +16,9 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UniversityComponent } from './components/university/university.component';
 import { LoginComponent } from './components/login/login.component';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { StoreModule, StoreRootModule } from '@ngrx/store';
+import { collegeReducer } from './store/colleges.reducer';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { LoginComponent } from './components/login/login.component';
     MatSidenavModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HotToastModule.forRoot(),
+    StoreModule.forRoot({collegeEntries: collegeReducer})
+
   ],
   providers: [],
   bootstrap: [AppComponent]

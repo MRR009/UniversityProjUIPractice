@@ -1,10 +1,10 @@
-<form>
+<form class="filter-form">
     <ul class="navbar-nav ml-auto nav-flex-icons ">
         
         <a color="primary" class="waves-light m20-right"type="button" (click)="university.toggle()"  mdbWavesEffect>
             university <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
         <div class="mt-2" mdbCollapse #university="bs-collapse">
-            <p class="fm-container" *ngFor = "let uni of allUni let i=index">
+            <p class="fm-container" *ngFor = "let uni of allUni">
                 <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university" (change)="onCheckboxChangeUni($event)">
                 <label for="university">{{uni.universityName}}</label>
             </p> 

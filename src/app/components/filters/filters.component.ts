@@ -1,8 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { College } from 'src/app/entity/college.entity';
+import { University } from 'src/app/entity/university.entity';
 import { CollegeService } from 'src/app/service/college.service';
 import { StreamService } from 'src/app/service/stream.service';
-import { UniversityService } from 'src/app/service/university.service';
+import {  UniversityService } from 'src/app/service/university.service';
+import { addCollege, removeCollege } from 'src/app/store/colleges.actions';
+import { CollegesStore } from 'src/app/store/colleges.store';
 
 @Component({
   selector: 'filters',
@@ -10,6 +17,9 @@ import { UniversityService } from 'src/app/service/university.service';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
+  public universities$ = new Observable<University[]>();
+
+  collegeEntries$ : Observable<any> | undefined;
 
   allUni: any
   allStreams: any
@@ -24,15 +34,14 @@ export class FiltersComponent implements OnInit {
   constructor(
     private universityService: UniversityService,
     private collegeService: CollegeService,
-    private streamService: StreamService
+    private streamService: StreamService,
+    private route: ActivatedRoute,
+    private store: Store
   ) {
-    this.universityService.getAllUniversities().subscribe((data) => {
-      this.allUni = data;
-    })
+    this.collegeEntries$ = new Observable();
+    this.getUniversities();
 
-    this.streamService.getAllStream().subscribe((data) => {
-      this.allStreams = data;
-    })
+    this.getStreams();
 
   }
 
@@ -41,27 +50,44 @@ export class FiltersComponent implements OnInit {
   }
 
 
+  getUniversities(){
+    this.universityService.getAllUniversities().subscribe((data)=> {
+      this.allUni = data;
+    })
+  }
+
+  getStreams(){
+    this.streamService.getAllStream().subscribe((data) => {
+      this.allStreams = data;
+    })
+  }
+
+  
+  addColleges(college: College){
+    this.store.dispatch(addCollege(college))
+}
+
+
+getCollegesInUniversities(uniCode : String): College[]{
+  this.universityService
+  .getCollegesInUniversity(uniCode).subscribe((data: any) => {
+    this.checkedClgs = data;
+  })
+  return this.checkedClgs;
+}
+
   onCheckboxChangeUni(e: any) {
     if (e.target.checked) {
-      this.universityService
-        .getCollegesInUniversity(e.target.value).subscribe((data: any) => {
-          this.checkedStrmClgs.colleges.push(data[0])
-          this.checkedStrmClgs.streamCode = e.target.value
-          this.checkedClgs.push(this.checkedStrmClgs);
-          
-        }, err => console.log(err));
-    } else {
-      this.checkedClgs = this.checkedClgs.filter(function (obj: any) {
-        return obj.universityCode !== e.target.value;
-      });
+     this.getCollegesInUniversities(e.target.value);
+     console.log(this.getCollegesInUniversities(e.target.value))
       
+    } else {
       console.log("Unchecked")
-      console.log(this.checkedClgs)
-
     }
   }
 
   onCheckboxChangeStrm(e: any) {
+    this.streamService.changeStrmCode(e.target.value)
     if (e.target.checked) {
       this.streamService
         .getCollegesWithStream(e.target.value).subscribe((data: any) => {
@@ -81,6 +107,7 @@ export class FiltersComponent implements OnInit {
         console.log(clgStrm.college)
       })
     }
+
   }
 
 }
