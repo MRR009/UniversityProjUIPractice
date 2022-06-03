@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { College } from 'src/app/entity/college.entity';
 import { University } from 'src/app/entity/university.entity';
@@ -9,7 +9,8 @@ import { CollegeService } from 'src/app/service/college.service';
 import { StreamService } from 'src/app/service/stream.service';
 import {  UniversityService } from 'src/app/service/university.service';
 import { addCollege, removeCollege } from 'src/app/store/colleges.actions';
-import { CollegesStore } from 'src/app/store/colleges.store';
+import { filteredColleges } from 'src/app/store/colleges.selectors';
+import { CollegeStore } from './college.store';
 
 @Component({
   selector: 'filters',
@@ -20,16 +21,16 @@ export class FiltersComponent implements OnInit {
   public universities$ = new Observable<University[]>();
 
   collegeEntries$ : Observable<any> | undefined;
+  filteredColleges$ : Observable<any> | undefined;
+  // collegesList$: Observable<any> | undefined;
+
+  // colleges$ = this.collegeStore.colleges$;
+  // currentcolleges$ = this.collegeStore.currentColleges$;
 
   allUni: any
   allStreams: any
   checkedClgs: any[] = []
-  clgswithstrms: any[] = []
-  strmclgs: any[] = []
-  checkedStrmClgs = {
-    "colleges": this.strmclgs,
-    "streamCode": ""
-  }
+  collegesList : any[] = []
 
   constructor(
     private universityService: UniversityService,
@@ -37,16 +38,17 @@ export class FiltersComponent implements OnInit {
     private streamService: StreamService,
     private route: ActivatedRoute,
     private store: Store
+    //private collegeStore: CollegeStore
   ) {
     this.collegeEntries$ = new Observable();
     this.getUniversities();
-
     this.getStreams();
-
+    this.getColleges();
+    this.filteredColleges$ = store.select(filteredColleges)
   }
 
   ngOnInit(): void {
-
+    this.filteredColleges$ = this.store.select(filteredColleges)
   }
 
 
@@ -62,9 +64,10 @@ export class FiltersComponent implements OnInit {
     })
   }
 
-  
-  addColleges(college: College){
-    this.store.dispatch(addCollege(college))
+
+
+getColleges(){
+    this.collegeService.getAllColleges().subscribe(data => this.collegesList = data)
 }
 
 
@@ -78,34 +81,22 @@ getCollegesInUniversities(uniCode : String): College[]{
 
   onCheckboxChangeUni(e: any) {
     if (e.target.checked) {
-     this.getCollegesInUniversities(e.target.value);
-     console.log(this.getCollegesInUniversities(e.target.value))
+     this.getCollegesInUniversities(e.target.value).map(college => this.store.dispatch(addCollege(college)))
+     console.log(this.filteredColleges$)
+    } 
+    else{
+      this.getCollegesInUniversities(e.target.value).map(college => this.store.dispatch(removeCollege(college)))
+      console.log(this.filteredColleges$)
       
-    } else {
-      console.log("Unchecked")
     }
   }
 
   onCheckboxChangeStrm(e: any) {
     this.streamService.changeStrmCode(e.target.value)
     if (e.target.checked) {
-      this.streamService
-        .getCollegesWithStream(e.target.value).subscribe((data: any) => {
-         this.checkedStrmClgs.colleges.push(data[0])
-          console.log(this.checkedStrmClgs.colleges)
-          this.checkedStrmClgs.streamCode = e.target.value
-          this.checkedClgs.push(this.checkedStrmClgs);
-          
-        }, err => console.log(err));
+          console.log("checked")
     } else {
-      
-      this.checkedClgs.filter((obj : any) => {
-        return obj.streamCode != e.target.value
-      })
-
-      this.checkedClgs.map((clgStrm:any) => {
-        console.log(clgStrm.college)
-      })
+      console.log("unchecked") 
     }
 
   }
@@ -130,4 +121,9 @@ getCollegesInUniversities(uniCode : String): College[]{
 
       console.log(newData.forEach(element => { return element }))
         return obj.streamCode !== newData.forEach(element => { console.log(element) });
+
+          
+  addColleges(college: College){
+    this.store.dispatch(addCollege(college))
+}
  */

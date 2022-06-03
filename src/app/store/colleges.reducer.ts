@@ -14,7 +14,7 @@ export const collegeReducer = createReducer(
 
     on(removeCollege, (entries, college) => {
         const entriesClone: College[] = JSON.parse(JSON.stringify(entries));
-        const found = entriesClone.find(e => e.collegeId = college.collegeId)
+        const found = entriesClone.find(e => e.collegeCode = college.collegeCode)
         if(found){
             entriesClone.splice(entriesClone.indexOf(found), 1)
         }
