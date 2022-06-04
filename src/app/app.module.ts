@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { StoreModule, StoreRootModule } from '@ngrx/store';
 import { collegeReducer } from './store/colleges.reducer';
+import { CollegeComponent } from './components/college/college.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { collegeReducer } from './store/colleges.reducer';
     FiltersComponent,
     SidebarComponent,
     UniversityComponent,
-    LoginComponent
+    LoginComponent,
+    CollegeComponent
   ],
   imports: [
     BrowserModule,
