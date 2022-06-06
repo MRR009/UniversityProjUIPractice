@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CollegeService } from 'src/app/service/college.service';
 import { StreamService } from 'src/app/service/stream.service';
 import { UniversityService } from 'src/app/service/university.service';
+import { filteredColleges } from 'src/app/store/colleges.selectors';
 
 @Component({
   selector: 'app-college',
@@ -13,8 +14,11 @@ import { UniversityService } from 'src/app/service/university.service';
 })
 export class CollegeComponent implements OnInit {
 
-  collegeEntries$ : Observable<any> | undefined;
+  colleges$ : Observable<any> | undefined;
   filteredColleges$ : Observable<any> | undefined;
+
+  filteredColleges :any[] = []
+  colleges : any[]= []
 
   constructor(
     private universityService: UniversityService,
@@ -23,10 +27,23 @@ export class CollegeComponent implements OnInit {
     private route: ActivatedRoute,
     private store: Store
 
-  ) { }
+  ) { 
+    this.getColleges();
+    this.store.select(filteredColleges).subscribe((data: any) => {
+      this.filteredColleges = data
+    }
+    )
+  }
 
   ngOnInit(): void {
-    this.collegeEntries$ = new Observable();
+    console.log(this.filteredColleges)
+    console.log(this.colleges$?.subscribe(data => console.log(data)))
   }
+
+  getColleges(){
+    this.colleges$ = this.collegeService.getAllColleges()
+  }
+
+
 
 }

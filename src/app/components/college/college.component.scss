@@ -1,0 +1,118 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.unordered-list{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mdb-card-pad{
+    padding-bottom: 0rem !important;
+}
+
+.width{
+    min-height: 355px;
+    max-width: 50% !important;
+    min-width: 320px;
+}
+
+.margin{
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+
+.top-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rating{
+    color: beige;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+
+.name{
+    color: beige;
+    font-family: "sans-serif";
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.location{
+    color: beige;
+    font-family: "sans-serif";
+    font-size: 10px;
+}
+
+.details-section{
+    display: flex;
+}
+
+.fee{
+    color: rgb(192, 192, 192);
+    font-family: "sans-serif";
+    font-size: 14px;
+}
+
+.ranking{
+    color: rgb(192, 192, 192);
+    font-family: "sans-serif";
+    font-size: 14px;
+}
+
+.clg-emblem{
+    height: 30px;
+    width: 35px;
+}
+
+.name-location-image{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-location-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-padding{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.apply-button{
+    width: 50%;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid rgb(255, 121, 0);
+    background: rgb(255, 121, 0);
+    color: rgb(255, 255, 255);
+}
+
+.broucher{
+    width: 50%;
+    padding: 6px;
+    text-align: center;
+    //text-decoration: none;
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    color: rgb(255, 121, 0);
+    border-radius: 0px;
+}

@@ -1,1 +1,64 @@
-<p>college works!</p>
+<div class="container">
+    <ul class="unordered-list">
+        <li *ngFor="let college of colleges$ | async" class="margin width">
+            <mdb-card >
+                <div class="view rgba-white-slight waves-light " mdbWavesEffect>
+
+                    <div class="card-image d-flex flex-column justify-content-between custom-padding"
+                        style="background-image: url('https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&w=305&mode=stretch '); background-size: cover; height: 150px;">
+                        <p class="rating">Rating: 10/10</p>
+
+                        <div class="name-location-image">
+                            <img class="clg-emblem"
+                                src="https://images.collegedunia.com/public/college_data/images/logos/1434977143jpjpjpjpj.jpg?h=40&w=40&mode=stretch"
+                                alt="iitm college">
+                            />
+                            <div class="name-location-container">
+                                <h1 class="name ">{{college.collegeName}}</h1>
+                                <p class="location ml-2">{{college.collegeLocation}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <mdb-card-body class="mdb-card-pad">
+                        <div class="details-section">
+                            <p class="fee">20,00,000 Fee</p>
+                            <mdb-card-text>11th rank over 200 colleges</mdb-card-text>
+                        </div>
+                        <div >
+                            <button type="button" href="#" class="apply-button" mdbWavesEffect>Apply</button>
+                            <button type="button" class="broucher" mdbWavesEffect>broucher</button>
+                        </div>
+                        
+                    </mdb-card-body>
+                </div>
+            </mdb-card>
+        </li>
+    </ul>
+</div>
+
+
+<!-- Card -->
+<!-- <mdb-card>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        Card img
+        <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+        </mdb-card-img>
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+    Card content
+    <mdb-card-body>
+        Title
+        <mdb-card-title>
+            <h4>Card Title</h4>
+        </mdb-card-title>
+
+        Text
+        <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's content.
+        </mdb-card-text>
+
+        <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+    </mdb-card-body>
+</mdb-card> -->

@@ -31,6 +31,7 @@ export class FiltersComponent implements OnInit {
   allStreams: any
   checkedClgs: any[] = []
   collegesList : any[] = []
+  filteredColleges :any[] = []
 
   constructor(
     private universityService: UniversityService,
@@ -44,11 +45,10 @@ export class FiltersComponent implements OnInit {
     this.getUniversities();
     this.getStreams();
     this.getColleges();
-    this.filteredColleges$ = store.select(filteredColleges)
+  
   }
 
   ngOnInit(): void {
-    this.filteredColleges$ = this.store.select(filteredColleges)
   }
 
 
@@ -63,8 +63,6 @@ export class FiltersComponent implements OnInit {
       this.allStreams = data;
     })
   }
-
-
 
 getColleges(){
     this.collegeService.getAllColleges().subscribe(data => this.collegesList = data)
@@ -82,11 +80,10 @@ getCollegesInUniversities(uniCode : String): College[]{
   onCheckboxChangeUni(e: any) {
     if (e.target.checked) {
      this.getCollegesInUniversities(e.target.value).map(college => this.store.dispatch(addCollege(college)))
-     console.log(this.filteredColleges$)
+      console.log(e.target.value)
     } 
     else{
       this.getCollegesInUniversities(e.target.value).map(college => this.store.dispatch(removeCollege(college)))
-      console.log(this.filteredColleges$)
       
     }
   }
@@ -102,28 +99,3 @@ getCollegesInUniversities(uniCode : String): College[]{
   }
 
 }
-
-
-/**
-  this.streamService.getCollegesWithStream(e.target.value).subscribe((data: any) => {
-        data.forEach((element: any) => {
-          if (this.clgswithstrms.includes(element.collegeCode) == false) {
-            this.clgswithstrms.push(element.collegeCode)
-          }
-
-        });
-      })
-      let newData = this.clgswithstrms
-      console.log("newData.forEach(element => { return element })")
-      this.clgswithstrms.forEach(element => { console.log(element) })
-      console.log("newData.forEach(element => { return element })")
-      console.log(this.clgswithstrms)
-
-      console.log(newData.forEach(element => { return element }))
-        return obj.streamCode !== newData.forEach(element => { console.log(element) });
-
-          
-  addColleges(college: College){
-    this.store.dispatch(addCollege(college))
-}
- */
