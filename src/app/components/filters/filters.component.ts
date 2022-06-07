@@ -7,7 +7,7 @@ import { College } from 'src/app/entity/college.entity';
 import { University } from 'src/app/entity/university.entity';
 import { CollegeService } from 'src/app/service/college.service';
 import { StreamService } from 'src/app/service/stream.service';
-import {  UniversityService } from 'src/app/service/university.service';
+import { UniversityService } from 'src/app/service/university.service';
 import { addCollege, removeCollege } from 'src/app/store/colleges.actions';
 import { filteredColleges } from 'src/app/store/colleges.selectors';
 import { CollegeStore } from './college.store';
@@ -20,8 +20,9 @@ import { CollegeStore } from './college.store';
 export class FiltersComponent implements OnInit {
   public universities$ = new Observable<University[]>();
 
-  collegeEntries$ : Observable<any> | undefined;
-  filteredColleges$ : Observable<any> | undefined;
+  universityColleges$: Observable<any> | undefined;
+  collegeEntries$: Observable<any> | undefined;
+  filteredColleges$: Observable<any> | undefined;
   // collegesList$: Observable<any> | undefined;
 
   // colleges$ = this.collegeStore.colleges$;
@@ -30,8 +31,8 @@ export class FiltersComponent implements OnInit {
   allUni: any
   allStreams: any
   checkedClgs: any[] = []
-  collegesList : any[] = []
-  filteredColleges :any[] = []
+  collegesList: any[] = []
+  filteredColleges: any[] = []
 
   constructor(
     private universityService: UniversityService,
@@ -45,55 +46,65 @@ export class FiltersComponent implements OnInit {
     this.getUniversities();
     this.getStreams();
     this.getColleges();
-  
+    this.store.select(filteredColleges).subscribe({
+      next: (data) => {
+        this.filteredColleges = data
+        console.log("Inside Constructor")
+        console.log(data)
+      },
+
+      complete: () => console.info("added"),
+
+    })
+
   }
 
   ngOnInit(): void {
   }
 
 
-  getUniversities(){
-    this.universityService.getAllUniversities().subscribe((data)=> {
+  getUniversities() {
+    this.universityService.getAllUniversities().subscribe((data) => {
       this.allUni = data;
     })
   }
 
-  getStreams(){
+  getStreams() {
     this.streamService.getAllStream().subscribe((data) => {
       this.allStreams = data;
     })
   }
 
-getColleges(){
+  getColleges() {
     this.collegeService.getAllColleges().subscribe(data => this.collegesList = data)
-}
+  }
 
 
-getCollegesInUniversities(uniCode : String): College[]{
-  this.universityService
-  .getCollegesInUniversity(uniCode).subscribe((data: any) => {
-    this.checkedClgs = data;
-  })
-  return this.checkedClgs;
-}
+  getCollegesInUniversities(uniCode: String) {
+    this.universityColleges$ = this.universityService
+      .getCollegesInUniversity(uniCode)
+  }
+
+
 
   onCheckboxChangeUni(e: any) {
     if (e.target.checked) {
-     this.getCollegesInUniversities(e.target.value).map(college => this.store.dispatch(addCollege(college)))
-      console.log(e.target.value)
-    } 
-    else{
+      this.universityColleges$.map(college => this.store.dispatch(addCollege(college)))
+      console.log("Inside changed func")
+      console.log(this.filteredColleges)
+    }
+    else {
       this.getCollegesInUniversities(e.target.value).map(college => this.store.dispatch(removeCollege(college)))
-      
+
     }
   }
 
   onCheckboxChangeStrm(e: any) {
     this.streamService.changeStrmCode(e.target.value)
     if (e.target.checked) {
-          console.log("checked")
+      console.log("checked")
     } else {
-      console.log("unchecked") 
+      console.log("unchecked")
     }
 
   }

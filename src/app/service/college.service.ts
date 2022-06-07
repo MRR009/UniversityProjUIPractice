@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { College } from '../entity/college.entity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollegeService {
 
+  private filtColleges: College[] = []
   
   private baseUrl = 'http://localhost:9099/college';
   constructor(private http: HttpClient) { }
