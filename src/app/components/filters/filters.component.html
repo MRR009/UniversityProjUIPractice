@@ -1,55 +1,184 @@
 <form class="">
     <ul class="navbar-nav ml-auto nav-flex-icons ">
-        
-        <a color="primary" class="waves-light m20-right"type="button" (click)="university.toggle()"  mdbWavesEffect>
+
+        <a color="primary" class="waves-light m20-right" type="button" (click)="university.toggle()" mdbWavesEffect>
             university <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
         <div class="mt-2" mdbCollapse #university="bs-collapse">
-            <p class="fm-container" *ngFor = "let uni of allUni">
-                <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university" (change)="onCheckboxChangeUni($event)">
+            <p class="fm-container" *ngFor="let uni of allUni">
+                <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university"
+                    (change)="onCheckboxChangeUni($event)">
                 <label for="university">{{uni.universityName}}</label>
-            </p> 
-        </div> 
+            </p>
+        </div>
     </ul>
     <br>
     <ul class="navbar-nav ml-auto nav-flex-icons ">
-    
-        <a color="primary" class="waves-light m20-right"type="button" (click)="streams.toggle()"  mdbWavesEffect>
+
+        <a color="primary" class="waves-light m20-right" type="button" (click)="streams.toggle()" mdbWavesEffect>
             Stream <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
         <div class="mt-2" mdbCollapse #streams="bs-collapse">
-            <p class="fm-container" *ngFor = "let stream of allStreams let i=index">
-                <input class="checkbox" type="checkbox" id="stream" [value]="stream.streamCode" name="stream" (change)="onCheckboxChangeStrm($event)">
+            <p class="fm-container" *ngFor="let stream of allStreams let i=index">
+                <input class="checkbox" type="checkbox" id="stream" [value]="stream.streamCode" name="stream"
+                    (change)="onCheckboxChangeStrm($event)">
                 <label for="stream">{{stream.streamCode}}</label>
-            </p> 
-        </div> 
+            </p>
+        </div>
     </ul>
 </form>
 
-<!-- <ul>
-    <li *ngFor="let college of filteredColleges">
-        {{college.collegeCode}} : {{college.collegeName}}
-    </li>
-</ul> -->
-
-
-
-<!-- <li *ngFor = "let book of books let i=index">
-            {{ i+1 }} - {{ book.name }}
-          </li> -->
-
-
-          <!-- <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" >
-            <label for="studentName">Arts</label>
-        </p>
-        <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" >
-            <label for="studentName">Management</label>
-        </p>
-        <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" >
-            <label for="studentName">Science</label>
-        </p>
-        <p class="fm-container">
-            <input class="checkbox" type="checkbox" id="studentName" name="studentName" formControlName="studentName">
-            <label for="studentName">Commerce</label>
-        </p> -->
+<div class="jsx-1222910438 jsx-3480116930 jsx-1185381397 col-3 ">
+    <aside class="jsx-4234472103 filter-listing-container mb-5 bg-white">
+        <div class="jsx-4234472103 filters-wrapper my-0"><span
+                class="jsx-4234472103 total_exams d-inline-block py-3 px-0 text-sm font-weight-normal text-uppercase filter-found">Found
+                <b class="jsx-4234472103 font-weight-semi"> 18534</b>&nbsp; colleges</span><span data-csm-track="true"
+                data-csm-href="javascript:void(0)"
+                class="jsx-4234472103 hover-underline float-right py-3 px-0 position-realtive text-decoration-none text-primary text-sm pointer filter-reset-text">SET
+                DEFAULT</span></div>
+        <div class="jsx-3107713825 filters-wrapper my-0 ">
+            <div data-toggle="collapse" data-target="stream"
+                class="jsx-3107713825 position-relative pr-5 pl-3 py-3 text-md filter-head font-weight-semi bg-gray pointer filtered-by-program ">
+                Stream<div class="jsx-3107713825 filter_toggle position-relative float-right"><span
+                        class="jsx-3107713825 bar"></span><span class="jsx-3107713825 bar"></span></div>
+            </div>
+            <div id="stream" class="jsx-3107713825 collapse in">
+                <div class="jsx-3107713825 search_wrap"><span class="jsx-3107713825 icon icon-search "><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451" fill="#d4d4d4">
+                            <path
+                                d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z">
+                            </path>
+                        </svg></span><input type="text" placeholder="FIND STREAM"
+                        class="jsx-3107713825 search-box border-0 text-sm py-2 pl-2 font-weight-semi text-uppercase">
+                </div>
+                <ul class="jsx-3107713825 listing_filter  px-0 py-1 my-1 filter-scroll">
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-13" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-13"><label for="Stream-13"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/management-colleges"
+                                title="Top Management Colleges in India" class="jsx-3107713825">Management-
+                                [6949]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-10" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-10"><label for="Stream-10"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/engineering-colleges"
+                                title="Top Engineering Colleges in India" class="jsx-3107713825">Engineering-
+                                [5984]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-18" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-18"><label for="Stream-18"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/science-colleges" title="Top Science Colleges in India"
+                                class="jsx-3107713825">Science- [5919]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-3" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-3"><label for="Stream-3"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/arts-colleges" title="Top Arts Colleges in India"
+                                class="jsx-3107713825">Arts- [5085]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-5" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-5"><label for="Stream-5"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/commerce-colleges" title="Top Commerce Colleges in India"
+                                class="jsx-3107713825">Commerce- [4525]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-6" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-6"><label for="Stream-6"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/computer-applications-colleges"
+                                title="Top Computer Applications Colleges in India" class="jsx-3107713825">Computer
+                                Applications- [4328]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-9" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-9"><label for="Stream-9"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/education-colleges"
+                                title="Top Education Colleges in India" class="jsx-3107713825">Education-
+                                [2863]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-15" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-15"><label for="Stream-15"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/medical-colleges" title="Top Medical Colleges in India"
+                                class="jsx-3107713825">Medical- [2027]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-17" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-17"><label for="Stream-17"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/pharmacy-colleges" title="Top Pharmacy Colleges in India"
+                                class="jsx-3107713825">Pharmacy- [1894]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-16" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-16"><label for="Stream-16"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/paramedical-colleges"
+                                title="Top Paramedical Colleges in India" class="jsx-3107713825">Paramedical-
+                                [1432]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-14" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-14"><label for="Stream-14"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/mass-communications-colleges"
+                                title="Top Mass Communications Colleges in India" class="jsx-3107713825">Mass
+                                Communications- [1308]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-12" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-12"><label for="Stream-12"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/law-colleges" title="Top Law Colleges in India"
+                                class="jsx-3107713825">Law- [1269]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-20" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-20"><label for="Stream-20"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/vocational-courses-colleges"
+                                title="Top Vocational Courses Colleges in India" class="jsx-3107713825">Vocational
+                                Courses- [1173]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-8" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-8"><label for="Stream-8"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/design-colleges" title="Top Design Colleges in India"
+                                class="jsx-3107713825">Design- [1122]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-11" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-11"><label for="Stream-11"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/hotel-management-colleges"
+                                title="Top Hotel Management Colleges in India" class="jsx-3107713825">Hotel Management-
+                                [1012]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-1" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-1"><label for="Stream-1"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/agriculture-colleges"
+                                title="Top Agriculture Colleges in India" class="jsx-3107713825">Agriculture-
+                                [901]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-2" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-2"><label for="Stream-2"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/architecture-colleges"
+                                title="Top Architecture Colleges in India" class="jsx-3107713825">Architecture-
+                                [626]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-1113"
+                            type="checkbox" name="check" class="jsx-3107713825" value="Stream-1113"><label
+                            for="Stream-1113"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/animation-colleges"
+                                title="Top Animation Colleges in India" class="jsx-3107713825">Animation-
+                                [442]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-7" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-7"><label for="Stream-7"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/dental-colleges" title="Top Dental Colleges in India"
+                                class="jsx-3107713825">Dental- [438]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-4" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-4"><label for="Stream-4"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/aviation-colleges" title="Top Aviation Colleges in India"
+                                class="jsx-3107713825">Aviation- [312]</a></label></li>
+                    <li class="jsx-3107713825 checkbox position-relative d-block "><input id="Stream-19" type="checkbox"
+                            name="check" class="jsx-3107713825" value="Stream-19"><label for="Stream-19"
+                            class="jsx-3107713825 d-block text-md position-relative text-uppercase mb-0"><a
+                                href="https://collegedunia.com/veterinary-sciences-colleges"
+                                title="Top Veterinary Sciences Colleges in India" class="jsx-3107713825">Veterinary
+                                Sciences- [107]</a></label></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <div>
+        <div style="display: contents;"></div>
+    </div>
+    <div id="left_side_barslot_1" class="jsx-1222910438 jsx-3480116930 jsx-1185381397 sideBarSlot overflow-hidden">
+    </div>
+    <div id="left_side_barslot_2" class="jsx-1222910438 jsx-3480116930 jsx-1185381397 sideBarSlot overflow-hidden">
+    </div>
+    <div id="left_side_barslot_3" class="jsx-1222910438 jsx-3480116930 jsx-1185381397 sideBarSlot overflow-hidden">
+    </div>
+</div>
