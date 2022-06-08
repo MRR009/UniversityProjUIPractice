@@ -10,6 +10,6 @@ export interface CollegeGroup {
 export const filteredColleges = createSelector(
     createFeatureSelector('collegeEntries'),
     (state: College[]) => {
-        return state
+        return [...state]
       }
 )

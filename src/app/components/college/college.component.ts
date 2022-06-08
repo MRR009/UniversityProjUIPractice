@@ -29,15 +29,15 @@ export class CollegeComponent implements OnInit {
 
   ) { 
     this.getColleges();
-    this.store.select(filteredColleges).subscribe((data: any) => {
-      this.filteredColleges = data
-    }
-    )
+    // this.store.select(filteredColleges).subscribe((data: any) => {
+    //   this.filteredColleges = data
+    // }
+    // )
   }
 
   ngOnInit(): void {
-    console.log(this.filteredColleges)
-    console.log(this.colleges$?.subscribe(data => console.log(data)))
+    //console.log(this.filteredColleges)
+    //console.log(this.colleges$?.subscribe(data => console.log(data)))
   }
 
   getColleges(){

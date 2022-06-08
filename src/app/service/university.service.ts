@@ -33,7 +33,7 @@ export class UniversityService {
   }
 
   getUniversity(uniCode: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getbycode?uniCode={${uniCode}`);
+    return this.http.get(`${this.baseUrl}/getbycode?uniCode=${uniCode}`);
   }
 
   getAllUniversities():Observable<any>{
