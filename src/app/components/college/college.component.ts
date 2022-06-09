@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { CollegeService } from 'src/app/service/college.service';
 import { StreamService } from 'src/app/service/stream.service';
 import { UniversityService } from 'src/app/service/university.service';
-import { filteredColleges } from 'src/app/store/colleges.selectors';
+import { filteredColleges, filterTriggered } from 'src/app/store/colleges.selectors';
 
 @Component({
   selector: 'app-college',
@@ -16,9 +16,11 @@ export class CollegeComponent implements OnInit {
 
   colleges$ : Observable<any> | undefined;
   filteredColleges$ : Observable<any> | undefined;
+  stateCount$: Observable<any> | undefined;
 
   filteredColleges :any[] = []
   colleges : any[]= []
+  stateCount: number = 0;
 
   constructor(
     private universityService: UniversityService,
@@ -29,15 +31,14 @@ export class CollegeComponent implements OnInit {
 
   ) { 
     this.getColleges();
-    // this.store.select(filteredColleges).subscribe((data: any) => {
-    //   this.filteredColleges = data
-    // }
-    // )
+    this.filteredColleges$ = this.store.select(filteredColleges)
+    this.store.select(filterTriggered).subscribe(data => this.stateCount = data)
+    console.log(this.stateCount)
+
   }
 
   ngOnInit(): void {
-    //console.log(this.filteredColleges)
-    //console.log(this.colleges$?.subscribe(data => console.log(data)))
+    
   }
 
   getColleges(){
