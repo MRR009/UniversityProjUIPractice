@@ -10,14 +10,12 @@ export const collegeReducer = createReducer(
     on(addCollege, (entries, college) => {
         const entriesClone: College[] = JSON.parse(JSON.stringify(entries));
         entriesClone.push(college);
-        //console.log(entriesClone)
         return entriesClone;
     }),
 
     on(removeCollege, (entries, college) => {
         const entriesClone: College[] = JSON.parse(JSON.stringify(entries));
         const found = entriesClone.find(e => e.collegeCode === college.collegeCode)
-       
         if(found){
             
             entriesClone.splice(entriesClone.indexOf(found), 1)   
@@ -26,12 +24,3 @@ export const collegeReducer = createReducer(
     })
 
 )
-
-// export const filterReducer = createReducer(
-//     filterTriggeredIni,
-//     on(filterTriggered, (entries, val) => {
-//         const tempValue = entries
-//         return tempValue
-
-//     })
-// )
