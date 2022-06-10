@@ -1,329 +1,321 @@
 <div class="container">
-    
-        <div *ngIf="stateCount > 0">
-            <ul class="unordered-list">
-                <li *ngFor="let college of filteredColleges$ | async" class="margin">
-                    <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
-                        <div class="jsx-1132648662 listing-block--default text-uppercase bg-white position-relative">
-                            <div style="cursor: pointer;">
-                                <div class="jsx-1132648662 top-block position-relative overflow-hidden"><img
-                                        data-src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
-                                        src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
-                                        alt="undefined cover image" height="130px"
-                                        class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
-                                    <div class="jsx-1132648662 img-overlay"></div>
-                                    <div class="jsx-1132648662 d-flex justify-content-between">
-                                        <div class="jsx-1132648662 d-flex"><a data-ga-event-category="gallery"
-                                                data-is-listing-college-card="true" data-csm-title="gallery"
-                                                class="jsx-1132648662 data-icon position-relative d-block text-white font-weight-bold"
-                                                href="#"><span
-                                                    class="jsx-1132648662 icon mr-1 text-svg gallery-svg spirit-image3"></span><span
-                                                    class="jsx-1132648662">15</span></a><a data-ga-event-category="gallery"
-                                                data-is-listing-college-card="true" data-csm-title="gallery"
-                                                class="jsx-1132648662 data-icon position-relative d-block text-white font-weight-bold"
-                                                href="#"><span
-                                                    class="jsx-1132648662 icon mr-1 text-svg video-svg spirit-image3"></span><span
-                                                    class="jsx-1132648662">3</span></a></div><a
-                                            href="#">
-                                            <div data-csm-track="true" data-csm-href="javascript:void(0)"
-                                                class="jsx-1132648662 d-flex pointer"><span
-                                                    class="jsx-1132648662 data-icon position-relative clg-reivew-ico spirit-image3 review-img"></span><span
-                                                    class="jsx-1132648662 data-icon position-relative mr-0 d-block text-white font-weight-bold rating-container pointer"><span
-                                                        class="jsx-1132648662 sup-cript text-white font-weight-bold d-block text-right">Collegedunia
-                                                        Rating</span><span
-                                                        class="jsx-1132648662 rating-text text-white font-weight-bold text-base d-block text-right">10.0/10</span></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="jsx-1132648662 clg-name-address"><a data-ga-event-category="info"
-                                            data-is-listing-college-card="true"
-                                            class="jsx-1132648662 college_name m-0 text-white font-weight-bold text-md"
-                                            href="#">
-                                            <h3 class="jsx-1132648662 text-white font-weight-bold text-md m-0">{{college.collegeName }}</h3>
-                                        </a></div>
+
+    <div *ngIf="stateCount > 0">
+        <ul class="unordered-list">
+            <li *ngFor="let college of filteredColleges$ | async" class="margin">
+                <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
+                    <div class="   listing-block--default text-uppercase bg-white position-relative">
+                        <div style="cursor: pointer;">
+                            <div class="   top-block position-relative overflow-hidden"><img
+                                    data-src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
+                                    src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
+                                    alt="undefined cover image" height="130px"
+                                    class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
+                                <div class="img-overlay"></div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex"><a data-ga-event-category="gallery"
+                                            data-is-listing-college-card="true" data-csm-title="gallery"
+                                            class="data-icon position-relative d-block text-white font-weight-bold"
+                                            href="#"><span
+                                                class="icon mr-1 text-svg gallery-svg spirit-image3"></span><span
+                                                class="  ">15</span></a><a data-ga-event-category="gallery"
+                                            data-is-listing-college-card="true" data-csm-title="gallery"
+                                            class="   data-icon position-relative d-block text-white font-weight-bold"
+                                            href="#"><span
+                                                class="   icon mr-1 text-svg video-svg spirit-image3"></span><span
+                                                class="  ">3</span></a></div><a href="#">
+                                        <div data-csm-track="true" data-csm-href="javascript:void(0)"
+                                            class="   d-flex pointer"><span
+                                                class="   data-icon position-relative clg-reivew-ico spirit-image3 review-img"></span><span
+                                                class="   data-icon position-relative mr-0 d-block text-white font-weight-bold rating-container pointer"><span
+                                                    class="   sup-cript text-white font-weight-bold d-block text-right">Collegedunia
+                                                    Rating</span><span
+                                                    class="   rating-text text-white font-weight-bold text-base d-block text-right">10.0/10</span></span>
+                                        </div>
+                                    </a>
                                 </div>
+                                <div class="   clg-name-address"><a data-ga-event-category="info"
+                                        data-is-listing-college-card="true"
+                                        class="   college_name m-0 text-white font-weight-bold text-md" href="#">
+                                        <h3 class="   text-white font-weight-bold text-md m-0">{{college.collegeName }}
+                                        </h3>
+                                    </a></div>
                             </div>
-                            <div class="jsx-1132648662 bottom-block w-100 position-relative">
-                                <div class="jsx-1132648662 clg-head d-flex"><a title="IIM Bangalore - Indian Institute of Management logo"
-                                        data-ga-event-category="info" data-is-listing-college-card="true"
-                                        data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
-                                        class="jsx-1132648662 clg-logo bg-white d-block"
-                                        href="#"><img
-                                            data-src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
-                                            src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
-                                            alt="IIM Bangalore - Indian Institute of Management logo" height="40px"
-                                            class="jsx-2384918447  ls-is-cached lazyloaded"></a><span
-                                        class="jsx-1132648662 location-badge"><span class="jsx-1132648662 mr-1"><span
-                                                class="jsx-1132648662 icon svg-sm spirit-image3"></span> {{college.collegeLocation }}</span>&nbsp;<span class="jsx-1132648662"><span
-                                                class="jsx-1132648662 icon svg-sm spirit-image3 approval-img"></span> AICTE,
-                                            UGC</span></span></div>
-                                <ul class="jsx-1132648662 clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex overflow-hidden">
-                                    <li class="jsx-1132648662 lr"><a data-ga-event-category="courses-fees"
-                                            data-is-listing-college-card="true" class="jsx-1132648662 pointer"
+                        </div>
+                        <div class="   bottom-block w-100 position-relative">
+                            <div class="   clg-head d-flex"><a
+                                    title="IIM Bangalore - Indian Institute of Management logo"
+                                    data-ga-event-category="info" data-is-listing-college-card="true"
+                                    data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
+                                    class="   clg-logo bg-white d-block" href="#"><img
+                                        data-src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
+                                        src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
+                                        alt="IIM Bangalore - Indian Institute of Management logo" height="40px"
+                                        class="jsx-2384918447  ls-is-cached lazyloaded"></a><span
+                                    class="   location-badge"><span class="   mr-1"><span
+                                            class="   icon svg-sm spirit-image3"></span> {{college.collegeLocation
+                                        }}</span>&nbsp;<span class="  "><span
+                                            class="   icon svg-sm spirit-image3 approval-img"></span> AICTE,
+                                        UGC</span></span></div>
+                            <ul
+                                class="   clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex overflow-hidden">
+                                <li class="   lr"><a data-ga-event-category="courses-fees"
+                                        data-is-listing-college-card="true" class="   pointer" href="#"><span
+                                            class="   lr-key text-lg text-primary d-block font-weight-bold">₹
+                                            2,300,000</span><span title="MBA/PGDM - Total Fees"
+                                            class="   lr-value d-block "> MBA/PGDM - Total Fees </span></a></li>
+                                <li class="   lr"><a data-ga-event-category="courses-fees"
+                                        data-is-listing-college-card="true" class="   pointer" href="#"><span
+                                            class="   lr-key text-lg text-primary d-block font-weight-bold">₹
+                                            2,320,000</span><span title="Executive MBA - Total Fees"
+                                            class="   lr-value d-block "> Executive MBA - Total Fees </span></a></li>
+                                <li class="   lr"><a data-ga-event-category="reviews"
+                                        data-is-listing-college-card="true" class="  " href="#"><span
+                                            class="   lr-key text-lg text-primary d-block font-weight-bold"> 9 / 10
+                                        </span><span class="   lr-value d-block">Based on 154 User reviews</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="   media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
+                                class="  " href="#"><span class="   rank-container pointer"><span
+                                        class="   rank-span">Ranked 1 out of
+                                        50<div class="   rank-name">Financial Express</div></span></span></a></div>
+                        <div class="   clg-links w-100 text-center px-2 py-0"><a
+                                title="IIM Bangalore - Indian Institute of Management, Bangalore - Admission Details 2022"
+                                data-ga-event-category="admission" data-is-listing-college-card="true"
+                                class="   college_nav_tab first_tab hover-underline" href="#">Admission
+                                2022</a><a title="IIM Bangalore - Indian Institute of Management, Bangalore - Reviews "
+                                data-ga-event-category="reviews" data-is-listing-college-card="true"
+                                class="   college_nav_tab first_tab hover-underline" href="#">Reviews</a><a
+                                title="IIM Bangalore - Indian Institute of Management, Bangalore - Course &amp; Fees Details "
+                                data-ga-event-category="courses-fees" data-is-listing-college-card="true"
+                                class="   college_nav_tab first_tab hover-underline" href="#">Courses
+                                &amp; Fees</a></div>
+                        <div class="   d-flex align-items-center"><button type="button" data-csm-track="true"
+                                data-csm-value="Apply" data-is-listing-college-card="true"
+                                class="   clg-apply  apply-now-button d-flex align-self-center border text-uppercase"><span
+                                    class="   pointer-none icon icon-white mr-1 spirit-image3"></span>Apply
+                                Now</button><button type="button" data-csm-track="true" data-csm-value="Brochure"
+                                data-is-listing-college-card="true"
+                                class="   clg-brochure  download_brouchure border d-flex align-self-center bg-white text-uppercase "><span
+                                    class="   pointer-none icon mr-1 spirit-image3"></span>Brochure</button></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="stateCount == 0">
+        <ul class="unordered-list">
+            <li *ngFor="let college of colleges$ | async" class="margin">
+                <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
+                    <div class="   listing-block--default text-uppercase bg-white position-relative">
+                        <div style="cursor: pointer;">
+                            <div class="   top-block position-relative overflow-hidden"><img
+                                    data-src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
+                                    src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
+                                    alt="undefined cover image" height="130px"
+                                    class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
+                                <div class="   img-overlay"></div>
+                                <div class="   d-flex justify-content-between">
+                                    <div class="   d-flex"><a data-ga-event-category="gallery"
+                                            data-is-listing-college-card="true" data-csm-title="gallery"
+                                            class="    data-icon position-relative d-block text-white font-weight-bold"
                                             href="#"><span
-                                                class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold">₹
-                                                2,300,000</span><span title="MBA/PGDM - Total Fees"
-                                                class="jsx-1132648662 lr-value d-block "> MBA/PGDM - Total Fees </span></a></li>
-                                    <li class="jsx-1132648662 lr"><a data-ga-event-category="courses-fees"
-                                            data-is-listing-college-card="true" class="jsx-1132648662 pointer"
+                                                class="   icon icon-size mr-1 text-svg gallery-svg spirit-image3"></span><span
+                                                class="jsx-  mt-1">15</span></a><a data-ga-event-category="gallery"
+                                            data-is-listing-college-card="true" data-csm-title="gallery"
+                                            class="   data-icon position-relative d-block text-white font-weight-bold"
                                             href="#"><span
-                                                class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold">₹
-                                                2,320,000</span><span title="Executive MBA - Total Fees"
-                                                class="jsx-1132648662 lr-value d-block "> Executive MBA - Total Fees </span></a></li>
-                                    <li class="jsx-1132648662 lr"><a data-ga-event-category="reviews" data-is-listing-college-card="true"
-                                            class="jsx-1132648662"
-                                            href="#"><span
-                                                class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold"> 9 / 10
-                                            </span><span class="jsx-1132648662 lr-value d-block">Based on 154 User reviews</span></a></li>
-                                </ul>
+                                                class="   icon mr-1 text-svg video-svg spirit-image3"></span><span
+                                                class="  ">3</span></a></div><a href="#">
+                                        <div data-csm-track="true" data-csm-href="javascript:void(0)"
+                                            class="   d-flex pointer"><span
+                                                class="   data-icon position-relative clg-reivew-ico spirit-image3 review-img"></span><span
+                                                class="   data-icon position-relative mr-0 d-block text-white font-weight-bold rating-container pointer"><span
+                                                    class="   sup-cript text-white font-weight-bold d-block text-right">Collegedunia
+                                                    Rating</span><span
+                                                    class="   rating-text text-white font-weight-bold text-base d-block text-right">10.0/10</span></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="   clg-name-address"><a data-ga-event-category="info"
+                                        data-is-listing-college-card="true"
+                                        class="   college_name m-0 text-white font-weight-bold text-md" href="#">
+                                        <h3 class="   text-white font-weight-bold text-md m-0">{{college.collegeName }}
+                                        </h3>
+                                    </a></div>
                             </div>
-                            <div class="jsx-1132648662 media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
-                                    class="jsx-1132648662"
-                                    href="#"><span
-                                        class="jsx-1132648662 rank-container pointer"><span class="jsx-1132648662 rank-span">Ranked 1 out of
-                                            50<div class="jsx-1132648662 rank-name">Financial Express</div></span></span></a></div>
-                            <div class="jsx-1132648662 clg-links w-100 text-center px-2 py-0"><a
-                                    title="IIM Bangalore - Indian Institute of Management, Bangalore - Admission Details 2022"
-                                    data-ga-event-category="admission" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 college_nav_tab first_tab hover-underline"
-                                    href="#">Admission
-                                    2022</a><a title="IIM Bangalore - Indian Institute of Management, Bangalore - Reviews "
-                                    data-ga-event-category="reviews" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 college_nav_tab first_tab hover-underline"
-                                    href="#">Reviews</a><a
-                                    title="IIM Bangalore - Indian Institute of Management, Bangalore - Course &amp; Fees Details "
-                                    data-ga-event-category="courses-fees" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 college_nav_tab first_tab hover-underline"
-                                    href="#">Courses
-                                    &amp; Fees</a></div>
-                            <div class="jsx-1132648662 d-flex align-items-center"><button type="button" data-csm-track="true"
-                                    data-csm-value="Apply" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 clg-apply  apply-now-button d-flex align-self-center border text-uppercase"><span
-                                        class="jsx-1132648662 pointer-none icon icon-white mr-1 spirit-image3"></span>Apply
-                                    Now</button><button type="button" data-csm-track="true" data-csm-value="Brochure"
+                        </div>
+                        <div class="   bottom-block w-100 position-relative">
+                            <div class="   clg-head d-flex"><a
+                                    title="IIM Bangalore - Indian Institute of Management logo"
+                                    data-ga-event-category="info" data-is-listing-college-card="true"
+                                    data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
+                                    class="   clg-logo bg-white d-block" href="#"><img
+                                        data-src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
+                                        src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
+                                        alt="IIM Bangalore - Indian Institute of Management logo" height="40px"
+                                        class="jsx-2384918447  ls-is-cached lazyloaded"></a><span
+                                    class="   location-badge"><span class="   mr-1"><span
+                                            class="   icon svg-sm spirit-image3"></span> {{college.collegeLocation
+                                        }}</span>&nbsp;<span class="  "><span
+                                            class="   icon svg-sm spirit-image3 approval-img"></span> AICTE,
+                                        UGC</span></span></div>
+                            <ul
+                                class="   clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex overflow-hidden">
+                                <li class="   lr"><a data-ga-event-category="courses-fees"
+                                        data-is-listing-college-card="true" class="   pointer" href="#"><span
+                                            class="   lr-key text-lg text-primary d-block font-weight-bold">₹
+                                            2,300,000</span><span title="MBA/PGDM - Total Fees"
+                                            class="   lr-value d-block "> MBA/PGDM - Total Fees </span></a></li>
+                                <li class="   lr"><a data-ga-event-category="courses-fees"
+                                        data-is-listing-college-card="true" class="   pointer" href="#"><span
+                                            class="   lr-key text-lg text-primary d-block font-weight-bold">₹
+                                            2,320,000</span><span title="Executive MBA - Total Fees"
+                                            class="   lr-value d-block "> Executive MBA - Total Fees </span></a></li>
+                                <li class="   lr"><a data-ga-event-category="reviews"
+                                        data-is-listing-college-card="true" class="  " href="#"><span
+                                            class="   lr-key text-lg text-primary d-block font-weight-bold"> 9 / 10
+                                        </span><span class="   lr-value d-block">Based on 154 User reviews</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="   media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
+                                class="  " href="#"><span class="   rank-container pointer"><span
+                                        class="   rank-span">Ranked 1 out of
+                                        50<div class="   rank-name">Financial Express</div></span></span></a></div>
+                        <div class="   clg-links w-100 text-center px-2 py-0"><a
+                                title="IIM Bangalore - Indian Institute of Management, Bangalore - Admission Details 2022"
+                                data-ga-event-category="admission" data-is-listing-college-card="true"
+                                class="   college_nav_tab first_tab hover-underline" href="#">Admission
+                                2022</a><a title="IIM Bangalore - Indian Institute of Management, Bangalore - Reviews "
+                                data-ga-event-category="reviews" data-is-listing-college-card="true"
+                                class="   college_nav_tab first_tab hover-underline" href="#">Reviews</a><a
+                                title="IIM Bangalore - Indian Institute of Management, Bangalore - Course &amp; Fees Details "
+                                data-ga-event-category="courses-fees" data-is-listing-college-card="true"
+                                class="   college_nav_tab first_tab hover-underline" href="#">Courses
+                                &amp; Fees</a></div>
+                        <div class="jsx-1132648663 d-flex align-items-center "><button type="button" 
+                                data-csm-track="true" data-csm-value="Apply" data-is-listing-college-card="true"
+                                class="   clg-apply  apply-now-button d-flex justify-content-center align-items-center align-self-center border text-uppercase"
+                                (click)="openPopup()" mdbWavesEffect><span
+                                    class="   pointer-none icon icon-white icon-size mr-1 spirit-image3"></span>Apply
+                                Now</button>
+                                
+                            <!-- <button type="button" data-csm-track="true" data-csm-value="Brochure"
                                     data-is-listing-college-card="true"
-                                    class="jsx-1132648662 clg-brochure  download_brouchure border d-flex align-self-center bg-white text-uppercase "><span
-                                        class="jsx-1132648662 pointer-none icon mr-1 spirit-image3"></span>Brochure</button></div>
+                                    class="   clg-brochure  download_brouchure border d-flex align-self-center bg-white text-uppercase "><span
+                                        class="   pointer-none icon mr-1 spirit-image3"></span>Brochure</button> -->
                         </div>
                     </div>
-                </li>
-            </ul>
-        </div>
-        <div *ngIf="stateCount == 0">
-            <ul class="unordered-list">
-                <li *ngFor="let college of colleges$ | async" class="margin">
-                    <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
-                        <div class="jsx-1132648662 listing-block--default text-uppercase bg-white position-relative">
-                            <div style="cursor: pointer;">
-                                <div class="jsx-1132648662 top-block position-relative overflow-hidden"><img
-                                        data-src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
-                                        src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
-                                        alt="undefined cover image" height="130px"
-                                        class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
-                                    <div class="jsx-1132648662 img-overlay"></div>
-                                    <div class="jsx-1132648662 d-flex justify-content-between">
-                                        <div class="jsx-1132648662 d-flex"><a data-ga-event-category="gallery"
-                                                data-is-listing-college-card="true" data-csm-title="gallery"
-                                                class="jsx-1132648662 data-icon position-relative d-block text-white font-weight-bold"
-                                                href="#"><span
-                                                    class="jsx-1132648662 icon mr-1 text-svg gallery-svg spirit-image3"></span><span
-                                                    class="jsx-1132648662">15</span></a><a data-ga-event-category="gallery"
-                                                data-is-listing-college-card="true" data-csm-title="gallery"
-                                                class="jsx-1132648662 data-icon position-relative d-block text-white font-weight-bold"
-                                                href="#"><span
-                                                    class="jsx-1132648662 icon mr-1 text-svg video-svg spirit-image3"></span><span
-                                                    class="jsx-1132648662">3</span></a></div><a
-                                            href="#">
-                                            <div data-csm-track="true" data-csm-href="javascript:void(0)"
-                                                class="jsx-1132648662 d-flex pointer"><span
-                                                    class="jsx-1132648662 data-icon position-relative clg-reivew-ico spirit-image3 review-img"></span><span
-                                                    class="jsx-1132648662 data-icon position-relative mr-0 d-block text-white font-weight-bold rating-container pointer"><span
-                                                        class="jsx-1132648662 sup-cript text-white font-weight-bold d-block text-right">Collegedunia
-                                                        Rating</span><span
-                                                        class="jsx-1132648662 rating-text text-white font-weight-bold text-base d-block text-right">10.0/10</span></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="jsx-1132648662 clg-name-address"><a data-ga-event-category="info"
-                                            data-is-listing-college-card="true"
-                                            class="jsx-1132648662 college_name m-0 text-white font-weight-bold text-md"
-                                            href="#">
-                                            <h3 class="jsx-1132648662 text-white font-weight-bold text-md m-0">{{college.collegeName }}</h3>
-                                        </a></div>
-                                </div>
-                            </div>
-                            <div class="jsx-1132648662 bottom-block w-100 position-relative">
-                                <div class="jsx-1132648662 clg-head d-flex"><a title="IIM Bangalore - Indian Institute of Management logo"
-                                        data-ga-event-category="info" data-is-listing-college-card="true"
-                                        data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
-                                        class="jsx-1132648662 clg-logo bg-white d-block"
-                                        href="#"><img
-                                            data-src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
-                                            src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
-                                            alt="IIM Bangalore - Indian Institute of Management logo" height="40px"
-                                            class="jsx-2384918447  ls-is-cached lazyloaded"></a><span
-                                        class="jsx-1132648662 location-badge"><span class="jsx-1132648662 mr-1"><span
-                                                class="jsx-1132648662 icon svg-sm spirit-image3"></span> {{college.collegeLocation }}</span>&nbsp;<span class="jsx-1132648662"><span
-                                                class="jsx-1132648662 icon svg-sm spirit-image3 approval-img"></span> AICTE,
-                                            UGC</span></span></div>
-                                <ul class="jsx-1132648662 clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex overflow-hidden">
-                                    <li class="jsx-1132648662 lr"><a data-ga-event-category="courses-fees"
-                                            data-is-listing-college-card="true" class="jsx-1132648662 pointer"
-                                            href="#"><span
-                                                class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold">₹
-                                                2,300,000</span><span title="MBA/PGDM - Total Fees"
-                                                class="jsx-1132648662 lr-value d-block "> MBA/PGDM - Total Fees </span></a></li>
-                                    <li class="jsx-1132648662 lr"><a data-ga-event-category="courses-fees"
-                                            data-is-listing-college-card="true" class="jsx-1132648662 pointer"
-                                            href="#"><span
-                                                class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold">₹
-                                                2,320,000</span><span title="Executive MBA - Total Fees"
-                                                class="jsx-1132648662 lr-value d-block "> Executive MBA - Total Fees </span></a></li>
-                                    <li class="jsx-1132648662 lr"><a data-ga-event-category="reviews" data-is-listing-college-card="true"
-                                            class="jsx-1132648662"
-                                            href="#"><span
-                                                class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold"> 9 / 10
-                                            </span><span class="jsx-1132648662 lr-value d-block">Based on 154 User reviews</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="jsx-1132648662 media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
-                                    class="jsx-1132648662"
-                                    href="#"><span
-                                        class="jsx-1132648662 rank-container pointer"><span class="jsx-1132648662 rank-span">Ranked 1 out of
-                                            50<div class="jsx-1132648662 rank-name">Financial Express</div></span></span></a></div>
-                            <div class="jsx-1132648662 clg-links w-100 text-center px-2 py-0"><a
-                                    title="IIM Bangalore - Indian Institute of Management, Bangalore - Admission Details 2022"
-                                    data-ga-event-category="admission" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 college_nav_tab first_tab hover-underline"
-                                    href="#">Admission
-                                    2022</a><a title="IIM Bangalore - Indian Institute of Management, Bangalore - Reviews "
-                                    data-ga-event-category="reviews" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 college_nav_tab first_tab hover-underline"
-                                    href="#">Reviews</a><a
-                                    title="IIM Bangalore - Indian Institute of Management, Bangalore - Course &amp; Fees Details "
-                                    data-ga-event-category="courses-fees" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 college_nav_tab first_tab hover-underline"
-                                    href="#">Courses
-                                    &amp; Fees</a></div>
-                            <div class="jsx-1132648662 d-flex justify-content-center align-items-center"><button type="button" data-csm-track="true"
-                                    data-csm-value="Apply" data-is-listing-college-card="true"
-                                    class="jsx-1132648662 clg-apply  apply-now-button d-flex align-self-center border text-uppercase" mdbWavesEffect><span
-                                        class="jsx-1132648662 pointer-none icon icon-white mr-1 spirit-image3"></span>Apply
-                                    Now</button>
-                                    <!-- <button type="button" data-csm-track="true" data-csm-value="Brochure"
-                                    data-is-listing-college-card="true"
-                                    class="jsx-1132648662 clg-brochure  download_brouchure border d-flex align-self-center bg-white text-uppercase "><span
-                                        class="jsx-1132648662 pointer-none icon mr-1 spirit-image3"></span>Brochure</button> -->
-                                    </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>   
-    
+                </div>
+            </li>
+        </ul>
+    </div>
+
 </div>
 
 <!-- <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
-    <div class="jsx-1132648662 listing-block--default text-uppercase bg-white position-relative">
+    <div class="   listing-block--default text-uppercase bg-white position-relative">
         <div style="cursor: pointer;">
-            <div class="jsx-1132648662 top-block position-relative overflow-hidden"><img
+            <div class="   top-block position-relative overflow-hidden"><img
                     data-src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
                     src="https://images.collegedunia.com/public/college_data/images/appImage/25602_IIMB_New.jpg?h=130&amp;w=305&amp;mode=stretch"
                     alt="undefined cover image" height="130px"
                     class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
-                <div class="jsx-1132648662 img-overlay"></div>
-                <div class="jsx-1132648662 d-flex justify-content-between">
-                    <div class="jsx-1132648662 d-flex"><a data-ga-event-category="gallery"
+                <div class="   img-overlay"></div>
+                <div class="   d-flex justify-content-between">
+                    <div class="   d-flex"><a data-ga-event-category="gallery"
                             data-is-listing-college-card="true" data-csm-title="gallery"
-                            class="jsx-1132648662 data-icon position-relative d-block text-white font-weight-bold"
+                            class="   data-icon position-relative d-block text-white font-weight-bold"
                             href="#"><span
-                                class="jsx-1132648662 icon mr-1 text-svg gallery-svg spirit-image3"></span><span
-                                class="jsx-1132648662">15</span></a><a data-ga-event-category="gallery"
+                                class="   icon mr-1 text-svg gallery-svg spirit-image3"></span><span
+                                class="  ">15</span></a><a data-ga-event-category="gallery"
                             data-is-listing-college-card="true" data-csm-title="gallery"
-                            class="jsx-1132648662 data-icon position-relative d-block text-white font-weight-bold"
+                            class="   data-icon position-relative d-block text-white font-weight-bold"
                             href="#"><span
-                                class="jsx-1132648662 icon mr-1 text-svg video-svg spirit-image3"></span><span
-                                class="jsx-1132648662">3</span></a></div><a
+                                class="   icon mr-1 text-svg video-svg spirit-image3"></span><span
+                                class="  ">3</span></a></div><a
                         href="#">
                         <div data-csm-track="true" data-csm-href="javascript:void(0)"
-                            class="jsx-1132648662 d-flex pointer"><span
-                                class="jsx-1132648662 data-icon position-relative clg-reivew-ico spirit-image3 review-img"></span><span
-                                class="jsx-1132648662 data-icon position-relative mr-0 d-block text-white font-weight-bold rating-container pointer"><span
-                                    class="jsx-1132648662 sup-cript text-white font-weight-bold d-block text-right">Collegedunia
+                            class="   d-flex pointer"><span
+                                class="   data-icon position-relative clg-reivew-ico spirit-image3 review-img"></span><span
+                                class="   data-icon position-relative mr-0 d-block text-white font-weight-bold rating-container pointer"><span
+                                    class="   sup-cript text-white font-weight-bold d-block text-right">Collegedunia
                                     Rating</span><span
-                                    class="jsx-1132648662 rating-text text-white font-weight-bold text-base d-block text-right">10.0/10</span></span>
+                                    class="   rating-text text-white font-weight-bold text-base d-block text-right">10.0/10</span></span>
                         </div>
                     </a>
                 </div>
-                <div class="jsx-1132648662 clg-name-address"><a data-ga-event-category="info"
+                <div class="   clg-name-address"><a data-ga-event-category="info"
                         data-is-listing-college-card="true"
-                        class="jsx-1132648662 college_name m-0 text-white font-weight-bold text-md"
+                        class="   college_name m-0 text-white font-weight-bold text-md"
                         href="#">
-                        <h3 class="jsx-1132648662 text-white font-weight-bold text-md m-0">Bangalore</h3>
+                        <h3 class="   text-white font-weight-bold text-md m-0">Bangalore</h3>
                     </a></div>
             </div>
         </div>
-        <div class="jsx-1132648662 bottom-block w-100 position-relative">
-            <div class="jsx-1132648662 clg-head d-flex"><a title="IIM Bangalore - Indian Institute of Management logo"
+        <div class="   bottom-block w-100 position-relative">
+            <div class="   clg-head d-flex"><a title="IIM Bangalore - Indian Institute of Management logo"
                     data-ga-event-category="info" data-is-listing-college-card="true"
                     data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
-                    class="jsx-1132648662 clg-logo bg-white d-block"
+                    class="   clg-logo bg-white d-block"
                     href="#"><img
                         data-src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
                         src="https://images.collegedunia.com/public/college_data/images/logos/col30730.png?h=40&amp;w=40&amp;mode=stretch"
                         alt="IIM Bangalore - Indian Institute of Management logo" height="40px"
                         class="jsx-2384918447  ls-is-cached lazyloaded"></a><span
-                    class="jsx-1132648662 location-badge"><span class="jsx-1132648662 mr-1"><span
-                            class="jsx-1132648662 icon svg-sm spirit-image3"></span> IIM Banglore</span>&nbsp;<span class="jsx-1132648662"><span
-                            class="jsx-1132648662 icon svg-sm spirit-image3 approval-img"></span> AICTE,
+                    class="   location-badge"><span class="   mr-1"><span
+                            class="   icon svg-sm spirit-image3"></span> IIM Banglore</span>&nbsp;<span class="  "><span
+                            class="   icon svg-sm spirit-image3 approval-img"></span> AICTE,
                         UGC</span></span></div>
-            <ul class="jsx-1132648662 clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex overflow-hidden">
-                <li class="jsx-1132648662 lr"><a data-ga-event-category="courses-fees"
-                        data-is-listing-college-card="true" class="jsx-1132648662 pointer"
+            <ul class="   clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex overflow-hidden">
+                <li class="   lr"><a data-ga-event-category="courses-fees"
+                        data-is-listing-college-card="true" class="   pointer"
                         href="#"><span
-                            class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold">₹
+                            class="   lr-key text-lg text-primary d-block font-weight-bold">₹
                             2,300,000</span><span title="MBA/PGDM - Total Fees"
-                            class="jsx-1132648662 lr-value d-block "> MBA/PGDM - Total Fees </span></a></li>
-                <li class="jsx-1132648662 lr"><a data-ga-event-category="courses-fees"
-                        data-is-listing-college-card="true" class="jsx-1132648662 pointer"
+                            class="   lr-value d-block "> MBA/PGDM - Total Fees </span></a></li>
+                <li class="   lr"><a data-ga-event-category="courses-fees"
+                        data-is-listing-college-card="true" class="   pointer"
                         href="#"><span
-                            class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold">₹
+                            class="   lr-key text-lg text-primary d-block font-weight-bold">₹
                             2,320,000</span><span title="Executive MBA - Total Fees"
-                            class="jsx-1132648662 lr-value d-block "> Executive MBA - Total Fees </span></a></li>
-                <li class="jsx-1132648662 lr"><a data-ga-event-category="reviews" data-is-listing-college-card="true"
-                        class="jsx-1132648662"
+                            class="   lr-value d-block "> Executive MBA - Total Fees </span></a></li>
+                <li class="   lr"><a data-ga-event-category="reviews" data-is-listing-college-card="true"
+                        class="  "
                         href="#"><span
-                            class="jsx-1132648662 lr-key text-lg text-primary d-block font-weight-bold"> 9 / 10
-                        </span><span class="jsx-1132648662 lr-value d-block">Based on 154 User reviews</span></a></li>
+                            class="   lr-key text-lg text-primary d-block font-weight-bold"> 9 / 10
+                        </span><span class="   lr-value d-block">Based on 154 User reviews</span></a></li>
             </ul>
         </div>
-        <div class="jsx-1132648662 media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
-                class="jsx-1132648662"
+        <div class="   media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
+                class="  "
                 href="#"><span
-                    class="jsx-1132648662 rank-container pointer"><span class="jsx-1132648662 rank-span">Ranked 1 out of
-                        50<div class="jsx-1132648662 rank-name">Financial Express</div></span></span></a></div>
-        <div class="jsx-1132648662 clg-links w-100 text-center px-2 py-0"><a
+                    class="   rank-container pointer"><span class="   rank-span">Ranked 1 out of
+                        50<div class="   rank-name">Financial Express</div></span></span></a></div>
+        <div class="   clg-links w-100 text-center px-2 py-0"><a
                 title="IIM Bangalore - Indian Institute of Management, Bangalore - Admission Details 2022"
                 data-ga-event-category="admission" data-is-listing-college-card="true"
-                class="jsx-1132648662 college_nav_tab first_tab hover-underline"
+                class="   college_nav_tab first_tab hover-underline"
                 href="#">Admission
                 2022</a><a title="IIM Bangalore - Indian Institute of Management, Bangalore - Reviews "
                 data-ga-event-category="reviews" data-is-listing-college-card="true"
-                class="jsx-1132648662 college_nav_tab first_tab hover-underline"
+                class="   college_nav_tab first_tab hover-underline"
                 href="#">Reviews</a><a
                 title="IIM Bangalore - Indian Institute of Management, Bangalore - Course &amp; Fees Details "
                 data-ga-event-category="courses-fees" data-is-listing-college-card="true"
-                class="jsx-1132648662 college_nav_tab first_tab hover-underline"
+                class="   college_nav_tab first_tab hover-underline"
                 href="#">Courses
                 &amp; Fees</a></div>
-        <div class="jsx-1132648662 d-flex align-items-center"><button type="button" data-csm-track="true"
+        <div class="   d-flex align-items-center"><button type="button" data-csm-track="true"
                 data-csm-value="Apply" data-is-listing-college-card="true"
-                class="jsx-1132648662 clg-apply  apply-now-button d-flex align-self-center border text-uppercase"><span
-                    class="jsx-1132648662 pointer-none icon icon-white mr-1 spirit-image3"></span>Apply
+                class="   clg-apply  apply-now-button d-flex align-self-center border text-uppercase"><span
+                    class="   pointer-none icon icon-white mr-1 spirit-image3"></span>Apply
                 Now</button><button type="button" data-csm-track="true" data-csm-value="Brochure"
                 data-is-listing-college-card="true"
-                class="jsx-1132648662 clg-brochure  download_brouchure border d-flex align-self-center bg-white text-uppercase "><span
-                    class="jsx-1132648662 pointer-none icon mr-1 spirit-image3"></span>Brochure</button></div>
+                class="   clg-brochure  download_brouchure border d-flex align-self-center bg-white text-uppercase "><span
+                    class="   pointer-none icon mr-1 spirit-image3"></span>Brochure</button></div>
     </div>
 </div> -->
 
@@ -377,7 +369,7 @@
         <hr />
         <div class="mdb-card-pad  d-flex flex-column justify-content-end ">
             <div class="details">
-                <div class="jsx-1132648662 media-rank">
+                <div class="   media-rank">
                     <a class="message">RANKED 1 OUT OF 50 FINANCIAL EXPRESS</a>
                 </div>
                 <div class="details-section">

@@ -20,6 +20,11 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { StoreModule, StoreRootModule } from '@ngrx/store';
 import { collegeReducer } from './store/colleges.reducer';
 import { CollegeComponent } from './components/college/college.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -32,7 +37,8 @@ import { CollegeComponent } from './components/college/college.component';
     SidebarComponent,
     UniversityComponent,
     LoginComponent,
-    CollegeComponent
+    CollegeComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +49,10 @@ import { CollegeComponent } from './components/college/college.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
     HotToastModule.forRoot(),
     StoreModule.forRoot({collegeEntries: collegeReducer})
 

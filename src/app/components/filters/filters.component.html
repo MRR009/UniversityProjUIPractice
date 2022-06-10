@@ -1,7 +1,7 @@
 <form class="">
-    <ul class="navbar-nav ml-auto nav-flex-icons ">
+    <ul class="navbar-nav ml-auto nav-flex-icons filter-style">
 
-        <a color="primary" class="waves-light m20-right" type="button" (click)="university.toggle()" mdbWavesEffect>
+        <a color="primary" class="waves-light m20-right " type="button" (click)="university.toggle()" mdbWavesEffect>
             university <mdb-icon fas icon="caret-down " class="m20-left"></mdb-icon></a>
         <div class="mt-2" mdbCollapse #university="bs-collapse">
             <p class="fm-container" *ngFor="let uni of allUni">

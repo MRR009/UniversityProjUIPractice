@@ -1,0 +1,238 @@
+<!-- <div class="modal-dialog modal-dialog-centered" [ngStyle]="{'display':displayStyle}">
+    <button type="button" class="btn btn-danger" 
+            (click)="closePopup()">
+    Close
+    </button>
+</div> -->
+
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closePopup()">No Thanks</button>
+  <!-- <button mat-button  cdkFocusInitial>Ok</button> -->
+</div>
+
+<!-- body {
+    height: 100%;
+}
+
+.main-div mat-card{
+
+    padding: 0px;
+    min-width: 300px;
+    margin-top: 125px;
+    max-height: 300px;
+    
+}
+
+.loginform {
+    padding: 20px;
+}
+
+.overlay-container{
+    background-color: #3f51b5;
+    
+    min-height: 100vh;
+}
+.overlay{
+    margin-top: 170px;
+    
+
+	background-size: cover;
+	color: #FFFFFF;
+	position: relative;
+	
+	
+	
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+h1 {
+	font-weight: bold;
+	margin: 0;
+}
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buttonsignup {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+----------------------------------------------------------
+
+
+
+<div class="d-flex flex-row justify-content-center  top-div " >
+
+<div class="main-div  col-md-6 d-flex flex-row justify-content-center "  >
+    
+   
+    <mat-card fxFlex="25" class="d-flex flex-column justify-content-center"  style="border-radius: 20px;" >
+        
+        <mat-toolbar color="primary"  style="border-top-right-radius: 20px; border-top-left-radius: 20px;" >
+            Login Page
+        </mat-toolbar>
+        <form #loginForm="ngForm" (ngSubmit)="loginsubmit()" fxLayoutAlign="stretch" fxLayout="column"
+            class="loginform">
+            <mat-form-field>
+                <input matInput [(ngModel)]="user.username" placeholder="UserName" name="username">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="user.password" placeholder="Password" name="password" value="1">
+            </mat-form-field>
+            <div fxLayoutGap="10px" fxLayoutAlign="center">
+                <button mat-raised-button mat-button type="submit">Login </button>
+                <button mat-raised-button mat-button type="button" routerLink="/register">Register </button>
+            </div>
+
+        </form>
+
+
+    </mat-card>
+</div>
+
+
+<div class="overlay-container col-md-6 d-flex flex-row justify-content-center ">
+    <div class="overlay">
+        
+        <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your  details and start journey with us</p>
+            <div >
+                <button  mat-raised-button mat-button type="button" routerLink="/register">Register </button>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+</div>
+----------------------------------------------------------------------------------------------------------
+import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/user';
+import { CookieService } from 'ngx-cookie-service';
+
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+
+  constructor(private userService: UserService, private snack: MatSnackBar, private router: Router, private authService: AuthService,
+    private cookies: CookieService) { }
+
+  ngOnInit(): void {
+
+    
+  }
+
+
+  user: User = new User("", "", "", "", "", "")
+
+
+  loginsubmit() {
+
+
+
+    this.userService.getUserByUsernameAndPassword(this.user.username, this.user.password).subscribe((data:any) => {
+      console.log(data)
+
+      if (data == null) {
+
+        this.snack.open("Bad credentials", "ok", { duration: 2000 })
+      }
+      else {
+
+        
+
+        localStorage.setItem('userId',data.userId);
+        
+        console.log(data.userId)
+        const requestBody = { userName: this.user.username, password: this.user.password }
+        this.authService.generateToken(requestBody).subscribe((data) => {
+          const parsedData = JSON.parse(data)
+          this.cookies.set('jwt_token', parsedData.JWT, { expires: 30 })
+          console.log(parsedData)
+          this.snack.open("Success", "ok", { duration: 1000 })
+
+          this.router.navigate(["land"]);
+        })
+
+
+
+      }
+
+    }, (error) => {
+      console.log(error);
+
+    });
+
+
+
+-----------------------------------------------------------------------------------------------------
+authservice
+----------------------
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  private baseUrl='http://localhost:9110/user';
+
+  constructor(private http:HttpClient) { }
+
+
+  generateToken(request:any){
+    return this.http.post<any>(`${this.baseUrl}/authenticate`,request,{responseType:'text' as 'json'})
+  }
+
+  welcome(token:any){
+    let tokenStr='Bearer '+token;
+    const headers= new HttpHeaders().set('Authorization',tokenStr);
+
+    return this.http.get<String>("http://localhost:9110/",{headers,responseType:'text' as 'json'})
+  }
+
+}
+
+
+
+
+
+
+  }
+
+} -->
