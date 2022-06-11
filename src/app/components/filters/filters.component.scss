@@ -3,7 +3,7 @@
 }
 
 .fm-container{
-    width: 30%;
+    
 }
 
 .m20-left{
@@ -14,12 +14,18 @@
     margin-right: 20px;
 }
 
-.filter-form{
-    width: 45%;;
+.height{
+   height: 30px;
 }
 
 .filter-style{
     border-left-style: solid;
     border-radius: 1px;
-    border-color: rgb(241, 118, 101);
+    //border-color: rgb(241, 118, 101);
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 30px;
+}
+
+.caret{
+    text-align: end;
 }
