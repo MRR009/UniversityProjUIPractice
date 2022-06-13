@@ -11,12 +11,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path: "" , redirectTo:"home",pathMatch: "full"},
   {path: "home" , component: HomeComponent },
   {path: "filters" , component: FiltersComponent },
-  {path: "sidebar" , component: SidebarComponent}
+  {path: "sidebar" , component: SidebarComponent},
+  {path: "login", component:LoginComponent}
 ];
 
 @NgModule({

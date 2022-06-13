@@ -1,0 +1,88 @@
+body {
+    height: 100%;
+}
+
+.main-div mat-card {
+
+    padding: 0px;
+    min-width: 300px;
+    margin-top: 125px;
+    max-height: 300px;
+
+}
+
+.loginform {
+    padding: 20px;
+}
+
+.overlay-container {
+    background-color: #3f51b5;
+
+    min-height: 100vh;
+}
+
+.overlay {
+    margin-top: 170px;
+
+
+    background-size: cover;
+    color: #FFFFFF;
+    position: relative;
+
+
+
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buttonsignup {
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.item {
+    position: relative;
+    min-height: 100px;
+    border: 1px solid #adb8c1;
+
+    &:after {
+        font-family: "Material Icons";
+        content: "\E876";
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: blue;
+    }
+}

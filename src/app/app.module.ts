@@ -25,6 +25,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -53,6 +56,9 @@ import { MatRippleModule } from '@angular/material/core';
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatListModule,
     HotToastModule.forRoot(),
     StoreModule.forRoot({collegeEntries: collegeReducer})
 

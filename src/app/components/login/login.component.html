@@ -1,1 +1,50 @@
-<p>login works!</p>
+<div class="d-flex flex-row justify-content-center  top-div " >
+
+<div class="main-div  col-md-6 d-flex flex-row justify-content-center "  >
+    
+   
+    <mat-card fxFlex="25" class="d-flex flex-column justify-content-center"  style="border-radius: 20px;" >
+        
+        <mat-toolbar color="primary"  style="border-top-right-radius: 20px; border-top-left-radius: 20px;" >
+            Login Page
+        </mat-toolbar>
+        <form #loginForm="ngForm" (ngSubmit)="loginsubmit()" fxLayoutAlign="stretch" fxLayout="column"
+            class="loginform">
+            <mat-form-field>
+                <input matInput [(ngModel)]="user.username" placeholder="UserName" name="username">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="user.password" placeholder="Password" name="password" value="1">
+            </mat-form-field>
+            <div fxLayoutGap="10px" fxLayoutAlign="center">
+                <button mat-raised-button mat-button type="submit">Login </button>
+                <button mat-raised-button mat-button type="button">Register </button>
+            </div>
+
+        </form>
+
+
+    </mat-card>
+</div>
+
+<!-- <md-list class="list">
+    <div class="item"></div>
+  </mat-list> -->
+
+
+<!-- <div class="overlay-container col-md-6 d-flex flex-row justify-content-center ">
+    <div class="overlay">
+        
+        <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your  details and start journey with us</p>
+            <div >
+                <button  mat-raised-button mat-button type="button" routerLink="/register">Register </button>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+</div> -->
+
