@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { HomeComponent } from './components/home/home.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -34,7 +33,6 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     NavbarComponent,
-    Navbar2Component,
     HomeComponent,
     FiltersComponent,
     SidebarComponent,

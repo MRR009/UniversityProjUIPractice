@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  isOpened = false;
+
+  constructor(
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
   }
 
+  public onShown(): void { console.log('OnShown triggered!'); }
+
+  // onclickLogin(){
+  //   this.router.navigateByUrl("/login")
+  // }
 }
