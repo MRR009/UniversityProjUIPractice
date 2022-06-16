@@ -5,6 +5,10 @@ export class College{
     collegeCode: String = "";
     collegeName: String = "";
     collegeType: String = "";
-    collegeLocation: String = "";
+    collegeDescription: String = "";
+    collegeImage: String = "";
+    collegeLogo: String = "";
+    establishedIn: number = 1111;
     university: University | undefined;
+    universityCode: String = "";
 }

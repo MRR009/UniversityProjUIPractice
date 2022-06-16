@@ -1,0 +1,71 @@
+<div class="d-flex flex-row justify-content-center p-5" style="background-color: #e9f0ed;">
+    <div class="form-border shadow-lg">
+        <h3 class="form-heading">Add Patient :</h3>
+        <form class="form-bg" [formGroup]="createPatientForm" (ngSubmit)="onSubmit()">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-title">Patient Name:</label>
+                            <br>
+                            <span class="span-field" *ngIf="f.patientName && f.patientName.invalid && f.patientName.touched">*Required</span>
+                            <input placeholder="name" type="text" class="form-control form-field" formControlName="patientName"/>
+                        </div>
+                        <div class="form-group mt-3 mb-3">
+                            <label class="form-title">Gender :</label>
+                            <select formControlName="patientGender" class="custom-select w-100 form-control">
+                                <option selected>--Gender--</option>
+                                <option *ngFor="let gender of Genders">{{gender}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-title">Age :</label>
+                            
+                            <span class="span-field" *ngIf="f.patientAge && f.patientAge.invalid && f.patientAge.touched">*Required</span>
+                            <input placeholder="age" min="25" max="70" type="number" class="form-control form-field" formControlName="patientAge"/>
+                        </div>
+                        <div class="form-group"><br>
+                            <label class="form-title">Blood Group:</label>
+                           
+                            <select formControlName="patientBloodGroup" class="custom-select w-100 form-control form-field">
+                                <option selected>--Blood Group--</option>
+                                <option *ngFor="let bgroup of BloodGroups">{{bgroup}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12"><br>
+                        <div class="form-group">
+                            <label class="form-title">Mobile :</label>
+                            
+                            <span class="span-field" *ngIf="f.patientMobileNumber&& f.patientMobileNumber.invalid && f.patientMobileNumber.touched">*Required</span>
+                            <input placeholder="contact number" type="text" class="form-control form-field" formControlName="patientMobileNumber"/>
+                        </div>
+                        <div class="form-group"><br>
+                            <label class="form-title">Location:</label>
+                            <br>
+                            <span class="span-field" *ngIf="f.patientLocation && f.patientLocation.invalid && f.patientLocation.touched">*Required</span>
+                            <input placeholder="location" type="text" class="form-control form-field" formControlName="patientLocation"/>
+                        </div>
+                        <div class="form-group"><br>
+                            <label class="form-title">Admitted date:</label><br>
+                            <input class="w-100" type="date" formControlName="admittedDate" class="custom-select w-100 form-control"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row justify-content-between">
+                <div class="text-center mt-2 d-flex flex-row justify-content-between mt-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <!-- <button class="btn btn-primary " routerLink="/RUDdoctor">Doctor List</button> -->
+                 </div>
+                 <div class="mt-3">
+                     <button (click)="assign()" class="btn btn-primary">
+                         Assign This Patient to doctor
+                     </button>
+                 </div>
+            </div>
+            
+            
+        </form>
+    </div>
+</div>
