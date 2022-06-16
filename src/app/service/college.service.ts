@@ -22,8 +22,8 @@ export class CollegeService {
   }
 
 
-  createCollege(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, employee);
+  createCollege(college: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/add`, college);
   }
 
   updateCollege(id: number, value: any): Observable<Object> {

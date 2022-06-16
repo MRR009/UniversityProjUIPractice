@@ -27,6 +27,11 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { CucollegeComponent } from './admin/cucollege/cucollege.component';
+import { CuuniversityComponent } from './admin/cuuniversity/cuuniversity.component';
+import { CustreamComponent } from './admin/custream/custream.component';
+import { CucourseComponent } from './admin/cucourse/cucourse.component';
+import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 
 
 @NgModule({
@@ -39,11 +44,18 @@ import { MatListModule } from '@angular/material/list';
     UniversityComponent,
     LoginComponent,
     CollegeComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    CucollegeComponent,
+    CuuniversityComponent,
+    CustreamComponent,
+    CucourseComponent,
+    AdminhomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     MatSidenavModule,

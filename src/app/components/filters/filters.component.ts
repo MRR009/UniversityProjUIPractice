@@ -68,6 +68,7 @@ export class FiltersComponent implements OnInit {
   getUniversities() {
     this.universityService.getAllUniversities().subscribe((data) => {
       this.allUni = data;
+      console.log(data)
     })
   }
 
@@ -78,7 +79,9 @@ export class FiltersComponent implements OnInit {
   }
 
   getColleges() {
-    this.collegeService.getAllColleges().subscribe(data => this.collegesList = data)
+    this.collegeService.getAllColleges().subscribe(data => {this.collegesList = data
+    console.log(data)
+    })
   }
 
 
@@ -89,6 +92,7 @@ export class FiltersComponent implements OnInit {
        this.universityService.getUniversity(e.target.value).subscribe({
          next: (data) => {
           this.collegesList.forEach(college => {
+            //console.log(college.university)
             if(college.universityCode === data.universityCode){
               
               this.store.dispatch(addCollege(college))

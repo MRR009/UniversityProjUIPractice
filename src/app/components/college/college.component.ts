@@ -40,7 +40,7 @@ export class CollegeComponent implements OnInit {
     this.getColleges();
     this.filteredColleges$ = this.store.select(filteredColleges)
     this.store.select(filterTriggered).subscribe(data => this.stateCount = data)
-    console.log(this.stateCount)
+    //console.log(this.stateCount)
 
   }
 
