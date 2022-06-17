@@ -22,7 +22,7 @@ export class CollegeComponent implements OnInit {
 
   filteredColleges :any[] = []
   colleges : any[]= []
-  stateCount: number = 0;
+  stateCount: number=0 ;
   displayStyle = "none";
 
   animal: string | undefined;
@@ -39,8 +39,8 @@ export class CollegeComponent implements OnInit {
   ) { 
     this.getColleges();
     this.filteredColleges$ = this.store.select(filteredColleges)
-    this.store.select(filterTriggered).subscribe(data => this.stateCount = data)
-    //console.log(this.stateCount)
+    this.stateCount$=this.store.select(filterTriggered)
+    //this.store.select(filteredColleges).subscribe(data => console.log(data))
 
   }
 

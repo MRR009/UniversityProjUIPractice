@@ -17,6 +17,7 @@ export const filteredColleges = createSelector(
 export const filterTriggered = createSelector(
   createFeatureSelector('collegeEntries'),
   (state: College[]) => {
+    //console.log(state.length)
     return state.length;
   }
 );

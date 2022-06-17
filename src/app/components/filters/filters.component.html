@@ -20,7 +20,7 @@
             <p class="fm-container pl-2" *ngFor="let stream of allStreams let i=index">
                 <input class="checkbox" type="checkbox" id="stream" [value]="stream.streamCode" name="stream"
                     (change)="onCheckboxChangeStrm($event)">
-                <label for="stream">{{stream.streamCode}}</label>
+                <label for="stream">{{stream.streamName}}</label>
             </p>
         </div>
     </ul>

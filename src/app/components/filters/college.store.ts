@@ -16,55 +16,55 @@ export const initialState: collegesState = {
 
 @Injectable()
 export class CollegeStore extends ComponentStore<collegesState>{
-    colleges$ = this.select(state => state.collection);
-    currentCollegeCode$ = this.select(state => state.currentCollegeCode);
-    currentColleges$ = this.select(
-        this.colleges$,
-        this.currentCollegeCode$,
-        (colleges, clgCode) => colleges.find(clg => clg.collegeCode === clgCode)
-    );
+    // colleges$ = this.select(state => state.collection);
+    // currentCollegeCode$ = this.select(state => state.currentCollegeCode);
+    // currentColleges$ = this.select(
+    //     this.colleges$,
+    //     this.currentCollegeCode$,
+    //     (colleges, clgCode) => colleges.find(clg => clg.collegeCode === clgCode)
+    // );
 
-    constructor(){
-        super(initialState);
-    }
+    // constructor(){
+    //     super(initialState);
+    // }
 
-    addCollege(college: College){
-        this.setState(state => {
-            return {
-                ...state,
-                collection: [...state.collection, college]
-            }
-        })
-    }
+    // addCollege(college: College){
+    //     this.setState(state => {
+    //         return {
+    //             ...state,
+    //             collection: [...state.collection, college]
+    //         }
+    //     })
+    // }
 
-    selectCollege(collegeCode: String | null){
-        this.patchState({
-            currentCollegeCode: collegeCode
-        })
-    }
+    // selectCollege(collegeCode: String | null){
+    //     this.patchState({
+    //         currentCollegeCode: collegeCode
+    //     })
+    // }
 
-    updateCollege = this.updater((state: collegesState, college: College)=> {
-        return {
-            ...state,
-            collection:state.collection.map(clg => {
-                if(college.collegeCode = clg.collegeCode){
-                    return college
-                }
-                return clg;
-            })
-        }
-    })
+    // updateCollege = this.updater((state: collegesState, college: College)=> {
+    //     return {
+    //         ...state,
+    //         collection:state.collection.map(clg => {
+    //             if(college.collegeCode = clg.collegeCode){
+    //                 return college
+    //             }
+    //             return clg;
+    //         })
+    //     }
+    // })
 
-    deleteCollege = this.updater((state: collegesState, collegeCode: String)=> {
-        return {
-            ...state,
-            collection: state.collection.filter(clg => {
-                if(clg.collegeCode === collegeCode){
-                    return false
-                }
-                return true;
-            })
-        }
-    })
+    // deleteCollege = this.updater((state: collegesState, collegeCode: String)=> {
+    //     return {
+    //         ...state,
+    //         collection: state.collection.filter(clg => {
+    //             if(clg.collegeCode === collegeCode){
+    //                 return false
+    //             }
+    //             return true;
+    //         })
+    //     }
+    // })
 }
 

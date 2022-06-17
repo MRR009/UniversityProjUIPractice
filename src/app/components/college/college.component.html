@@ -1,14 +1,13 @@
 <div class="container">
 
-    <div *ngIf="stateCount > 0">
+    <div *ngIf="(stateCount$ | async) > 0">
         <ul class="unordered-list">
-            <li *ngFor="let college of colleges$ | async" class="margin">
+            <li *ngFor="let college of filteredColleges$ | async" class="margin">
                 <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
                     <div class="   listing-block--default text-uppercase bg-white position-relative">
                         <div style="cursor: pointer;">
                             <div class="   top-block position-relative overflow-hidden"><img
-                                    data-src={{college.collegeImage}}
-                                    src={{college.collegeImage}}
+                                    data-src={{college.collegeImage}} src={{college.collegeImage}}
                                     alt="undefined cover image" height="130px"
                                     class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
                                 <div class="   img-overlay"></div>
@@ -23,14 +22,12 @@
                             <div class="clg-head d-flex"><a title="IIM Bangalore - Indian Institute of Management logo"
                                     data-ga-event-category="info" data-is-listing-college-card="true"
                                     data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
-                                    class="clg-logo bg-white d-block" href="#"><img
-                                        data-src={{college.collegeLogo}}
-                                        src={{college.collegeLogo}}
-                                        alt="ACT" height="40px"
+                                    class="clg-logo bg-white d-block" href="#"><img data-src={{college.collegeLogo}}
+                                        src={{college.collegeLogo}} alt="ACT" height="40px"
                                         class="ls-is-cached lazyloaded"></a>
                                 <span class="location-badge"><span class=" location mr-1">
                                         <mdb-icon fas icon="map-marker-alt" class="location-icon"></mdb-icon>
-                                        {{college.universityFk}}
+                                        location
                                     </span></span>
                             </div>
                             <ul class="clg-fee-review tile_details_div p-0 list-unstyled w-100 d-flex">
@@ -52,7 +49,8 @@
                             </ul>
                         </div>
                         <div class="media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
-                                class="  "><span class="rank-container pointer"><span class="rank-span">{{college.collegeInfo}}</span></span></a>
+                                class="  "><span class="rank-container pointer"><span
+                                        class="rank-span">{{college.collegeInfo}}</span></span></a>
                         </div>
 
                         <div class="d-flex align-items-center "><button type="button" data-csm-track="true"
@@ -73,15 +71,14 @@
             </li>
         </ul>
     </div>
-    <div *ngIf="stateCount == 0">
+    <div *ngIf="(stateCount$ | async) == 0">
         <ul class="unordered-list">
             <li *ngFor="let college of colleges$ | async" class="margin">
                 <div class="jsx-1162254489 mb-4 college-listing-card  automate_client_img_snippet col-4">
                     <div class="   listing-block--default text-uppercase bg-white position-relative">
                         <div style="cursor: pointer;">
                             <div class="   top-block position-relative overflow-hidden"><img
-                                    data-src={{college.collegeImage}}
-                                    src={{college.collegeImage}}
+                                    data-src={{college.collegeImage}} src={{college.collegeImage}}
                                     alt="undefined cover image" height="130px"
                                     class="jsx-1136940655 snippet-banner ls-is-cached lazyloaded">
                                 <div class="   img-overlay"></div>
@@ -96,10 +93,8 @@
                             <div class="clg-head d-flex"><a title="IIM Bangalore - Indian Institute of Management logo"
                                     data-ga-event-category="info" data-is-listing-college-card="true"
                                     data-csm-title="IIM Bangalore - Indian Institute of Management, Bangalore"
-                                    class="clg-logo bg-white d-block" href="#"><img
-                                        data-src={{college.collegeLogo}}
-                                        src={{college.collegeLogo}}
-                                        alt="ACT" height="40px"
+                                    class="clg-logo bg-white d-block" href="#"><img data-src={{college.collegeLogo}}
+                                        src={{college.collegeLogo}} alt="ACT" height="40px"
                                         class="ls-is-cached lazyloaded"></a>
                                 <span class="location-badge"><span class=" location mr-1">
                                         <mdb-icon fas icon="map-marker-alt" class="location-icon"></mdb-icon>
@@ -125,7 +120,8 @@
                             </ul>
                         </div>
                         <div class="media-rank"><a data-ga-event-category="rank" data-is-listing-college-card="true"
-                                class="  "><span class="rank-container pointer"><span class="rank-span">{{college.collegeInfo}}</span></span></a>
+                                class="  "><span class="rank-container pointer"><span
+                                        class="rank-span">{{college.collegeInfo}}</span></span></a>
                         </div>
 
                         <div class="d-flex align-items-center "><button type="button" data-csm-track="true"
