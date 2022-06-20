@@ -5,6 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
 import { College } from 'src/app/entity/college.entity';
 import { University } from 'src/app/entity/university.entity';
+import { AddressService } from 'src/app/service/address.service';
 import { CollegeService } from 'src/app/service/college.service';
 import { StreamService } from 'src/app/service/stream.service';
 import { UniversityService } from 'src/app/service/university.service';
@@ -23,6 +24,8 @@ export class FiltersComponent implements OnInit {
   universityColleges$: Observable<any> | undefined;
   collegeEntries$: Observable<any> | undefined;
   filteredColleges$: Observable<any> | undefined;
+  getAllAddresses$: Observable<any> | undefined;
+
   // collegesList$: Observable<any> | undefined;
 
   // colleges$ = this.collegeStore.colleges$;
@@ -39,6 +42,7 @@ export class FiltersComponent implements OnInit {
     private universityService: UniversityService,
     private collegeService: CollegeService,
     private streamService: StreamService,
+    private addressService: AddressService,
     private route: ActivatedRoute,
     private store: Store
     //private collegeStore: CollegeStore
@@ -47,6 +51,7 @@ export class FiltersComponent implements OnInit {
     this.getUniversities();
     this.getStreams();
     this.getColleges();
+    this.getAddresses();
     this.store.select(filteredColleges).subscribe({
       next: (data) => {
         this.filteredColleges = data
@@ -83,6 +88,10 @@ export class FiltersComponent implements OnInit {
     this.collegeService.getAllColleges().subscribe(data => {this.collegesList = data
     //console.log(data)
     })
+  }
+
+  getAddresses(){
+    return this.getAllAddresses$ = this.addressService.getAllAddress()
   }
 
 

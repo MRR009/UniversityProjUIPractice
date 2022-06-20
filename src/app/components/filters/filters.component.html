@@ -1,9 +1,8 @@
 <form class="">
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-
+    <ul class="navbar-nav ml-auto nav-flex-icons ">
         <a color="primary"  class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="university.toggle()" mdbWavesEffect>
             university <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
-        <div class="mt-2 pl-2" mdbCollapse #university="bs-collapse">
+        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #university="bs-collapse">
             <p class="fm-container pl-2" *ngFor="let uni of allUni">
                 <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university"
                     (change)="onCheckboxChangeUni($event)">
@@ -11,16 +10,25 @@
             </p>
         </div>
     </ul>
-    <hr >
-    <ul class="navbar-nav ml-auto nav-flex-icons ">
-
+    <ul class="navbar-nav ml-auto nav-flex-icons">
         <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="streams.toggle()" mdbWavesEffect>
             Stream <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
-        <div class="mt-2 pl-2" mdbCollapse #streams="bs-collapse">
+        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #streams="bs-collapse">
             <p class="fm-container pl-2" *ngFor="let stream of allStreams let i=index">
                 <input class="checkbox" type="checkbox" id="stream" [value]="stream.streamCode" name="stream"
                     (change)="onCheckboxChangeStrm($event)">
                 <label for="stream">{{stream.streamName}}</label>
+            </p>
+        </div>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+        <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="adresses.toggle()" mdbWavesEffect>
+            State <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
+        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #adresses="bs-collapse">
+            <p class="fm-container pl-2" *ngFor="let address of getAllAddresses$ | async">
+                <input class="checkbox" type="checkbox" id="stream" [value]="address.addressId" name="stream"
+                    (change)="onCheckboxChangeStrm($event)">
+                <label for="stream">{{address.state}}</label>
             </p>
         </div>
     </ul>
