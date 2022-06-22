@@ -22,13 +22,24 @@
         </div>
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
-        <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="adresses.toggle()" mdbWavesEffect>
+        <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="state.toggle()" mdbWavesEffect>
             State <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
-        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #adresses="bs-collapse">
+        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #state="bs-collapse">
             <p class="fm-container pl-2" *ngFor="let address of getAllAddresses$ | async">
                 <input class="checkbox" type="checkbox" id="stream" [value]="address.addressId" name="stream"
                     (change)="onCheckboxChangeStrm($event)">
                 <label for="stream">{{address.state}}</label>
+            </p>
+        </div>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+        <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="city.toggle()" mdbWavesEffect>
+            City <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
+        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #city="bs-collapse">
+            <p class="fm-container pl-2" *ngFor="let address of getAllAddresses$ | async">
+                <input class="checkbox" type="checkbox" id="stream" [value]="address.addressId" name="stream"
+                    (change)="onCheckboxChangeStrm($event)">
+                <label for="stream">{{address.city}}</label>
             </p>
         </div>
     </ul>

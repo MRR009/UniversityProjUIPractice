@@ -10,7 +10,12 @@ export const collegeReducer = createReducer(
     on(addCollege, (entries, college) => {
         const entriesClone: College[] = JSON.parse(JSON.stringify(entries));
         entriesClone.push(college);
-        return entriesClone;
+        const val =entriesClone.filter((value, index, self) =>
+        index === self.findIndex((t) => (
+          t.collegeCode === value.collegeCode
+        ))
+      )
+        return val;
     }),
 
     on(removeCollege, (entries, college) => {

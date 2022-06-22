@@ -54,9 +54,13 @@ export class FiltersComponent implements OnInit {
     this.getAddresses();
     this.store.select(filteredColleges).subscribe({
       next: (data) => {
-        this.filteredColleges = data
+      this.filteredColleges = data
       }
     })
+
+    this.filteredColleges.filter(function(elem, index, self) {
+      return index === self.indexOf(elem);
+  })
 
     this.store.select(filterTriggered).subscribe({
       next: (data) => {
@@ -99,37 +103,57 @@ export class FiltersComponent implements OnInit {
     if (e.target.checked) {
       let temp:College[]=[];
       console.log("Inside changed func")
-       this.universityService.getUniversity(e.target.value).subscribe({
-         next: (data) => {
-          this.collegesList.forEach(college => {
-            if(college.universityCode === data.universityCode){
-              // console.log(college.universityCode)
-              // console.log(data.universityCode)
-              this.store.dispatch(addCollege(college))
-            }
-            
-         })
-         }
-       })
+            this.universityService.getCollegesInUniversity(e.target.value).subscribe(data =>{
+              data.forEach((element:any) => {
+                    this.store.dispatch(addCollege(element))
+              });
+            })
     }
     else {
       console.log("Unchecked...Then.....")
-         this.filteredColleges.forEach(college => {
-           if(college.universityCode === e.target.value){
-             this.store.dispatch(removeCollege(college))
-           }
-           
-        })
+      this.universityService.getCollegesInUniversity(e.target.value).subscribe(data =>{
+        data.forEach((element:any) => {
+          this.store.dispatch(removeCollege(element))
+        });
+      })
     }
   }
 
   onCheckboxChangeStrm(e: any) {
     this.streamService.changeStrmCode(e.target.value)
     if (e.target.checked) {
-      console.log("checked")
+      console.log(this.filteredColleges)
+      console.log("Inside changed func")
+            this.streamService.getCollegesWithStream(e.target.value).subscribe(data =>{
+              data.forEach((element:any) => {
+                  this.store.dispatch(addCollege(element))
+              });
+            })
     } else {
-      console.log("unchecked")
+      console.log("Unchecked...Then.....")
+      this.streamService.getCollegesWithStream(e.target.value).subscribe(data =>{
+        data.forEach((element:any) => {
+          this.store.dispatch(removeCollege(element))
+        });
+      })
     }
 
   }
 }
+
+
+// this.universityService.getUniversity(e.target.value).subscribe({
+//   next: (data) => {
+//    this.collegesList.forEach(college => {
+//      if(college.universityCode === data.universityCode){
+//        // console.log(college.universityCode)
+//        // console.log(data.universityCode)
+//        this.store.dispatch(addCollege(college))
+//      }
+
+// this.filteredColleges.forEach(college => {
+//   if(college.universityCode === e.target.value){
+//     this.store.dispatch(removeCollege(college))
+//   }
+  
+// })
