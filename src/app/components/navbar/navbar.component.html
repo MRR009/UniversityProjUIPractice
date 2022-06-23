@@ -1,44 +1,37 @@
-  <!-- Copyright 2022 Google LLC. All Rights Reserved.
-      Use of this source code is governed by an MIT-style license that
-      can be found in the LICENSE file at https://angular.io/license -->
-
-<!--Navbar-->
-<mdb-navbar SideClass="nav-container navbar navbar-expand-lg navbar-light " class="navCss" [containerInside]="false">
+  
+<mdb-navbar SideClass="nav-container navbar navbar-expand-lg navbar-light "  class="navCss" [containerInside]="false">
 
   <!-- Navbar brand <mdb-icon fas icon="university" class="icon"></mdb-icon>-->
-  <mdb-navbar-brand><img class="icon-size mr-1" src="https://res.cloudinary.com/day69fcch/image/upload/v1655104066/CollegeMiniProj/icon_clguni_afapn6.png"></mdb-navbar-brand>
+  <mdb-navbar-brand><img class="icon-size mr-1" src="https://res.cloudinary.com/day69fcch/image/upload/v1655980863/CollegeMiniProj/unicole_apqgs0.png"></mdb-navbar-brand>
   
-  <!-- Collapsible content -->
+  
   <links>
-
-    <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-light text-white main-name" mdbWavesEffect>UniCol<span class="sr-only">(current)</span></a>
       </li>
     </ul>
-    
-    <!-- Dropdown -->
+
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light text-white" mdbWavesEffect>
           Btech<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light " mdbWavesEffect href="#">Action</a>
         </div>
       </li>
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light text-white" mdbWavesEffect>
           Mtech<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
         </div>
       </li>
-      <!-- Links -->
+      
       <li class="nav-item">
         <a class="nav-link">
           <div class="btn-group" mdbDropdown>
-            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <mdb-icon fas icon="user" class="text-white" mdbDropdownToggle></mdb-icon>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary">
               <a class="dropdown-item" href="#">My Profile</a>
               <div class="divider dropdown-divider"></div>
@@ -49,7 +42,5 @@
       </li>
     </ul>
   </links>
-  <!-- Collapsible content -->
 
 </mdb-navbar>
-<!--/.Navbar-->

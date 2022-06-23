@@ -10,7 +10,7 @@ import { filteredColleges, filterTriggered } from 'src/app/store/colleges.select
 import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
-  selector: 'app-college',
+  selector: 'college',
   templateUrl: './college.component.html',
   styleUrls: ['./college.component.scss']
 })
