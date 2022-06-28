@@ -56,4 +56,12 @@ export class UniversityService {
     return this.http.get(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
+//   getfilteredColleges(filters: { uniCode: string, genre: string } = { platform: "", genre: "" }): Observable<Product[]> {
+//     const filteredProducts = this.collegesList.filter(product => {
+//         return (filters.uniCode === "" ? true : filters.uniCode === product.platform ) && (filters.genre === "" ? true : filters.genre === product.genre)
+//     })
+
+//     return of(filteredProducts);
+// }
+
 }

@@ -5,8 +5,8 @@
         <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #university="bs-collapse">
             <p class="fm-container pl-2" *ngFor="let uni of allUni">
                 <input class="checkbox" type="checkbox" id="university" [value]="uni.universityCode" name="university"
-                    (change)="onCheckboxChangeUni($event)">
-                <label for="university">{{uni.universityName}}</label>
+                    (change)="onCheckboxChangeUni($event)" >
+                <label for="university" >{{uni.universityName}}</label>
             </p>
         </div>
     </ul>
@@ -45,6 +45,23 @@
     </ul>
 </form>
 
+<button [routerLink]="[routerLinkVariable]" [queryParams]="{ genre: 'rpg' }" queryParamsHandling="merge">RPG</button>
+
+<div class="product-filters">
+    <p>genres: </p>
+    <a [routerLink]="[]" [queryParams]="{ genre: 'rpg' }" queryParamsHandling="merge">rpg</a>
+    <a [routerLink]="[]" [queryParams]="{ genre: 'platformer' }" queryParamsHandling="merge">platformer</a>
+    <a [routerLink]="[]" [queryParams]="{ genre: 'racing' }" queryParamsHandling="merge">racing</a>
+    <a [routerLink]="[]" [queryParams]="{ genre: null }" queryParamsHandling="merge">clear</a>
+</div>
+
+<div class="product-filters">
+    <p>platforms: </p>
+    <a [routerLink]="[]" [queryParams]="{ platform: 'playstation' }" queryParamsHandling="merge">playstation</a>
+    <a [routerLink]="[]" [queryParams]="{ platform: 'switch' }" queryParamsHandling="merge">switch</a>
+    <a [routerLink]="[]" [queryParams]="{ platform: 'xbox' }" queryParamsHandling="merge">xbox</a>
+    <a [routerLink]="[]" [queryParams]="{ platform: null }" queryParamsHandling="merge">clear</a>
+</div>
 <!-- <ul>
     <li *ngFor="let coll of filteredColleges">
         <h1>{{coll.collegeName}}</h1>

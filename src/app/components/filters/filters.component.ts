@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
 import { College } from 'src/app/entity/college.entity';
@@ -25,6 +25,7 @@ export class FiltersComponent implements OnInit {
   collegeEntries$: Observable<any> | undefined;
   filteredColleges$: Observable<any> | undefined;
   getAllAddresses$: Observable<any> | undefined;
+  filtCollgs$: Observable<any> | undefined;
 
   // collegesList$: Observable<any> | undefined;
 
@@ -36,14 +37,17 @@ export class FiltersComponent implements OnInit {
   stateCount: any
   collegesList: any[] = []
   filteredColleges: any[] = []
+
   
+  public routerLinkVariable = "/college";
 
   constructor(
     private universityService: UniversityService,
     private collegeService: CollegeService,
     private streamService: StreamService,
     private addressService: AddressService,
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
     private store: Store
     //private collegeStore: CollegeStore
   ) {
@@ -72,7 +76,27 @@ export class FiltersComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(queryParams => {
+      /**
+       * If the query-string is '?genre=rpg&platform=xbox'
+       * the queryParams object will look like
+       * { platform: 'xbox', genre: 'rpg }
+       * */
+  });
+  }
+
+//   updateQueryParameters() {
+//     this.router.navigate(
+//         [], 
+//         { 
+//             queryParams: { 
+//                 genre: 'rpg'
+//             }, 
+//             queryParamsHandling: 'merge' 
+//         }
+//     );
+// }
 
 
   getUniversities() {
@@ -97,6 +121,16 @@ export class FiltersComponent implements OnInit {
   getAddresses(){
     return this.getAllAddresses$ = this.addressService.getAllAddress()
   }
+
+
+  // this.products$ = this.route.queryParams.pipe(switchMap(params => {
+  //   const filters = {
+  //     platform: params.platform || "",
+  //     genre: params.genre || ""
+  //   };
+  //   return this.productService.getProducts(filters);
+
+  // }));
 
 
   onCheckboxChangeUni(e: any) {

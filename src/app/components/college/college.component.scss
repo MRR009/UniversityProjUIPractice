@@ -169,7 +169,7 @@ a {
 
 /* ----------------------------------------------------------------------------------- */
 @media only screen and (max-width: 1024px) and (min-width: 700px){
-    .col-4.jsx-1162254489 {
+    .col-4.college-container {
         min-height: 305px;
         max-width: 50% !important;
         max-width: 280px;
@@ -177,21 +177,34 @@ a {
     }
 }
 
-.col-4.jsx-1162254489 {
+.col-4.college-container {
     min-width: 305px;
     max-width: 100% !important;
-    border-style: solid;
-    border-radius: 8px;
-    border-width: 0px;
+  
     
 }
 
-.automate_client_img_snippet.jsx-1162254489, .col-4.jsx-1162254489 {
+
+.border-styling-top{
+    border-style: solid;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+    border-width: 0px;
+}
+
+.border-styling-bottom{
+    border-style: solid;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-width: 0px;
+}
+
+.automate_client_img_snippet.college-container, .col-4.college-container {
     padding: 0px 5px !important;
 }
 
 .listing-block--default   {
-    box-shadow: rgb(208 208 208) 0px 0px 20px;
+    box-shadow: rgb(128, 128, 128) 0px 0px 20px;
     
 }
 
@@ -202,7 +215,7 @@ a {
     background-color: #fff;
 }
 
-.listing-block--default   .top-block   {
+ .top-block   {
     height: 130px;
     padding: 10px;
 }
@@ -220,7 +233,7 @@ div {
     display: block;
 }
 
-.listing-block--default   .top-block   .snippet-banner {
+.top-block   .snippet-banner {
     z-index: 0;
     position: absolute;
     top: 0px;
@@ -230,7 +243,7 @@ div {
     max-width: 100%;
 }
 
-.listing-block--default   .top-block   .img-overlay   {
+.top-block   .img-overlay   {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
@@ -240,7 +253,7 @@ div {
     left: 0px
 }
 
-.listing-block--default   .top-block   .data-icon   {
+.top-block   .data-icon   {
     margin-right: 10px;
     text-decoration: none;
     z-index: 1;
@@ -252,7 +265,7 @@ div {
     color: #fff;
 }
 
-.listing-block--default   .top-block   .data-icon   .text-svg   {
+.top-block   .data-icon   .text-svg   {
     float: left;
 }
 
@@ -278,7 +291,7 @@ div {
     width: 15px;
 }
 
-.listing-block--default   .top-block   .clg-reivew-ico   {
+.top-block   .clg-reivew-ico   {
     margin-right: 5px;
 }
 
@@ -288,24 +301,31 @@ div {
     height: 28px;
 }
 
-.listing-block--default   .top-block   .rating-container   {
+.top-block   .rating-container   {
     margin-right: 0px !important;
 }
 
-.listing-block--default   .top-block   .clg-name-address   {
+.clg-name-address   {
     position: absolute;
     z-index: 1;
-    max-width: 220px;
+    max-width: 300px;
     line-height: 0;
-    bottom: 2px;
     left: 70px;
+    //text-transform: lowercase;
+
+}
+
+.clg-name{
+    font-size: 14px !important;
+    color: rgb(2, 38, 105);
+    font-weight: 500;
 }
 
 .font-weight-bold, h1.font-weight-bold, h2.font-weight-bold, h3.font-weight-bold, h4.font-weight-bold, h5.font-weight-bold, h6.font-weight-bold, .h1.font-weight-bold, .h2.font-weight-bold, .h3.font-weight-bold, .h4.font-weight-bold, .h5.font-weight-bold, .h6.font-weight-bold {
     font-weight: 700;
 }
 
-.listing-block--default   .top-block   .data-icon   .sup-cript   {
+.top-block   .data-icon   .sup-cript   {
     font-size: 8px;
 }
 
@@ -317,78 +337,76 @@ div {
     font-size: .875rem;
 }
 
-.listing-block--default   .top-block   .clg-name-address   {
+.clg-name-address   {
     position: absolute;
     z-index: 1;
     max-width: 220px;
     line-height: 0;
-    bottom: 2px;
-    left: 70px;
+    left: 90px !important;
 }
 
-.listing-block--default   .bottom-block   {
+ .bottom-block   {
     padding: 0px 10px;
     float: left;
     z-index: 2;
     border-bottom: 1px solid rgb(219, 219, 219);
 }
 
-.listing-block--default   .bottom-block   .clg-logo   {
+ .bottom-block   .clg-logo   {
     width: 50px;
-    height: 50px;
+    height: 70px;
     padding: 5px;
     box-shadow: rgb(204 202 202) 0px 0px 5px;
-    margin-top: -31px;
+    //margin-top: -31px;
     margin-right: 10px;
 }
 
-.listing-block--default   .bottom-block   .location-badge   {
+.bottom-block   .location-badge   {
     font-size: 8px;
     margin-top: 5px;
 }
 
-.listing-block--default   .bottom-block   .location-badge   .approval-img   {
+.bottom-block   .location-badge   .approval-img   {
     width: 10px;
     height: 10px;
     background-position: -188px 1px;
 }
 
-.listing-block--default   .bottom-block   .location-badge   .svg-sm   {
+.bottom-block   .location-badge   .svg-sm   {
     fill: rgb(160, 160, 160);
     width: 9px;
     height: 9px;
     background-position: -156px 1px;
 }
 
-.listing-block--default   .bottom-block   .clg-fee-review   {
+.bottom-block   .clg-fee-review   {
     margin: 10px 0px;
 }
 
-.listing-block--default   .bottom-block   .clg-fee-review   li   {
+.bottom-block   .clg-fee-review   li   {
     padding: 0px 0px 0px 10px;
     width: 106px;
     height: 50px;
     border-left: 2px solid rgb(237, 239, 240);
 }
 
-.listing-block--default   .bottom-block   .clg-fee-review   li  :first-child {
+.bottom-block   .clg-fee-review   li  :first-child {
     border-left: none;
     padding-left: 0px;
     width: 106px;
 }
 
-.listing-block--default   .bottom-block   .clg-fee-review   li  :nth-child(2) {
+.bottom-block   .clg-fee-review   li  :nth-child(2) {
     width: 106px;
 }
 
 
-.listing-block--default   .bottom-block   .clg-fee-review   li  :last-child {
+.bottom-block   .clg-fee-review   li  :last-child {
     padding-right: 0px;
     width: 72px;
 }
 
-
-.listing-block--default   .media-rank   {
+.media-rank   {
     clear: both;
     text-align: center;
     min-height: 50px;
@@ -397,7 +415,7 @@ div {
     height: 120px;
 }
 
-.listing-block--default   .media-rank   .rank-container   {
+.rank-container   {
     display: block;
     text-align: left;
     min-width: 49%;
@@ -407,28 +425,28 @@ div {
     text-transform: none;
 }
 
-.listing-block--default   .media-rank   .rank-span   {
-    color: rgb(170, 170, 170);
+.rank-span   {
+    //color: rgb(170, 170, 170);
+    color: rgb(12, 12, 12);
     font-size: 11px;
     display: inline-block;
     
 }
 
-.listing-block--default   .media-rank   .rank-name   {
+.rank-name   {
     font-weight: 700;
 }
 
-.listing-block--default   .clg-links   {
+.clg-links   {
     background: rgb(247, 247, 247);
     height: 30px;
 }
 
-
-.listing-block--default   .clg-links   a  :first-child {
+.clg-links   a  :first-child {
     padding-left: 0px;
 }
 
-.listing-block--default   .clg-links   a   {
+.clg-links   a   {
     padding: 8px;
     color: rgb(153, 153, 153);
     display: inline-block;
@@ -436,7 +454,7 @@ div {
     font-size: 10px;
 }
 
-.listing-block--default   .clg-links   a   {
+.clg-links   a   {
     padding: 8px;
     color: rgb(153, 153, 153);
     display: inline-block;
@@ -444,11 +462,11 @@ div {
     font-size: 10px;
 }
 
-.listing-block--default   .clg-links   a  :last-child {
+.clg-links   a  :last-child {
     padding-right: 0px;
 }
 
-.listing-block--default   .clg-links   a   {
+.clg-links   a   {
     padding: 8px;
     color: rgb(153, 153, 153);
     display: inline-block;
@@ -456,7 +474,7 @@ div {
     font-size: 10px;
 }
 
-.listing-block--default   .clg-apply   {
+.clg-apply   {
     width: 50%;
     padding: 6px;
     text-align: center;
@@ -469,7 +487,7 @@ div {
     color: rgb(255, 255, 255);
 }
 
-.listing-block--default   .clg-brochure   {
+.clg-brochure   {
     width: 50%;
     padding: 6px;
     text-align: center;
@@ -478,7 +496,8 @@ div {
     display: block;
     font-weight: 500;
     font-size: 12px;
-    color: rgb(52, 126, 29);
+    color: rgb(0, 64, 107);
+    background-color: azure;
 }
 
 .icon-size{

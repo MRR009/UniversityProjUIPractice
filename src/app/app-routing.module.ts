@@ -12,13 +12,15 @@ import { HomeComponent } from './components/home/home.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
+import { CollegeDetailsComponent } from './components/college-details/college-details.component';
 
 const routes: Routes = [
   {path: "" , redirectTo:"home",pathMatch: "full"},
   {path: "home" , component: HomeComponent },
   {path: "filters" , component: FiltersComponent },
   {path: "sidebar" , component: SidebarComponent},
-  {path: "login", component:LoginComponent}
+  {path: "login", component:LoginComponent},
+  {path: "college-details", component:CollegeDetailsComponent}
 ];
 
 @NgModule({

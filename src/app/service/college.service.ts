@@ -14,7 +14,7 @@ export class CollegeService {
   constructor(private http: HttpClient) { }
 
   getcollege(collegeCode: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getbycode/`+`${collegeCode}`);
+    return this.http.get(`${this.baseUrl}/getbycode/?`+`code=${collegeCode}`);
   }
 
   getAllColleges():Observable<any>{

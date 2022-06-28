@@ -32,6 +32,7 @@ import { CuuniversityComponent } from './admin/cuuniversity/cuuniversity.compone
 import { CustreamComponent } from './admin/custream/custream.component';
 import { CucourseComponent } from './admin/cucourse/cucourse.component';
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { CollegeDetailsComponent } from './components/college-details/college-details.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
     CuuniversityComponent,
     CustreamComponent,
     CucourseComponent,
-    AdminhomeComponent
+    AdminhomeComponent,
+    CollegeDetailsComponent
   ],
   imports: [
     BrowserModule,
