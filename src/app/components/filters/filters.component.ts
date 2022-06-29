@@ -11,7 +11,7 @@ import { StreamService } from 'src/app/service/stream.service';
 import { UniversityService } from 'src/app/service/university.service';
 import { addCollege, removeCollege } from 'src/app/store/colleges.actions';
 import { filteredColleges, filterTriggered } from 'src/app/store/colleges.selectors';
-import { CollegeStore } from './college.store';
+
 
 @Component({
   selector: 'filters',

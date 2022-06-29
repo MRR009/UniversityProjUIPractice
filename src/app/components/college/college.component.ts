@@ -66,6 +66,10 @@ export class CollegeComponent implements OnInit {
   
   }
 
+  moreDetails(code: String){
+    console.log(code)
+    this.collegeService.selectedClgCode = code;
+  }
   
 
 }

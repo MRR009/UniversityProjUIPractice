@@ -1,14 +1,60 @@
+@media (min-width: 992px){
+body {
+    font-family: din, sans-serif;
+}
+}
+
 .header-section{
+    padding-left: 0px !important;
 }
 
 .top-block   {
-    height: 130px;
+    //height: 130px;
     padding: 10px;
+}
+
+.mr-12{
+    margin-right: 48px;
 }
 
 .overflow-hidden {
     overflow: hidden;
 }
 
+@media (min-width: 600px) and (max-width: 1100px){
+.tab-wrapper {
+    padding: 0px 15px;
+}
+}
 
+.list-unstyled {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.tab-wrapper .nav-item  {
+    position: relative;
+    letter-spacing: 0.5px;
+    font-family: ss1, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.body-container{
+    background-color: rgb(159, 191, 228);
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav-headings{
+    font-family: "sans-serif";
+    color: rgb(0, 64, 107);
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
 

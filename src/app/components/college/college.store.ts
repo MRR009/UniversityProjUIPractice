@@ -5,18 +5,27 @@ import { College } from "src/app/entity/college.entity";
 
 
 export interface collegesState {
-    collection: College[];
-    currentCollegeCode: String | null;
+    currentCollegeCode: String | "";
 }
 
-export const initialState: collegesState = {
-    collection: [],
-    currentCollegeCode: null
-}
+// export const initialState: collegesState = {
+//     currentCollegeCode: ""
+// }
 
 @Injectable()
 export class CollegeStore extends ComponentStore<collegesState>{
-    // colleges$ = this.select(state => state.collection);
+
+    constructor() {
+        super({currentCollegeCode: ''});
+    }
+
+    //currentCollegeCode$ = this.select(state => state.currentCollegeCode);
+
+
+    //setCollegeCode = this.updater((state, code:String) => {state.currentCollegeCode: code})
+}
+
+// colleges$ = this.select(state => state.collection);
     // currentCollegeCode$ = this.select(state => state.currentCollegeCode);
     // currentColleges$ = this.select(
     //     this.colleges$,
@@ -66,5 +75,3 @@ export class CollegeStore extends ComponentStore<collegesState>{
     //         })
     //     }
     // })
-}
-

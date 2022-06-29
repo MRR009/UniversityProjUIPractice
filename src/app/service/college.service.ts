@@ -8,6 +8,8 @@ import { College } from '../entity/college.entity';
 })
 export class CollegeService {
 
+  public selectedClgCode : String = "";
+
   private filtColleges: College[] = []
   
   private baseUrl = 'http://localhost:9099/college';

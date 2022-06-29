@@ -1,8 +1,22 @@
-<header  class="header-section">
-    <div class=" top-block position-relative overflow-hidden"><img
-        src={{bgImage}}
-        alt="undefined cover image" height="130px"
-        class="snippet-banner">
-    <div class="img-overlay"></div>
+<navbar></navbar>
+<div class="header-section">
+    <div class="  overflow-hidden"><img src={{bgImage}} alt="undefined cover image" height="300px"
+            class="snippet-banner w-100">
+        <div class="img-overlay"></div>
+    </div>
 </div>
-</header>
+<div class="pl-3 body-container">
+    <nav class="  tab-wrapper overflow-x-hidden ">
+        <ul class="list-unstyled menu-option-parent d-flex m-0 align-items-center ">
+            <li class="mr-12 "><a class=" active nav-headings text-base pt-4 pb-3 active">Info</a></li>
+            <li class="mr-12 "><a class="nav-headings text-base pt-4 pb-3">Courses&amp; Fees</a></li>
+            <li class="mr-12 "><a class="nav-headings text-base pt-4 pb-3">Placement</a></li>
+            <li class="mr-12 "><a class="nav-headings text-base pt-4 pb-3">Gallery</a></li>
+            <li class="mr-12 "><a class="nav-headings text-base pt-4 pb-3">Faculty</a></li>
+            <li class="mr-12 "><a class="nav-headings text-base pt-4 pb-3">Hostel</a></li>
+        </ul>
+    </nav>
+    <p>
+        {{collegeDesc}}
+    </p>
+</div>
