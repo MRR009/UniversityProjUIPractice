@@ -37,6 +37,8 @@ export class FiltersComponent implements OnInit {
   stateCount: any
   collegesList: any[] = []
   filteredColleges: any[] = []
+  checkedStreams: any[] = []
+  checkedUniversities: any[] = []
 
   
   public routerLinkVariable = "/college";
@@ -71,38 +73,18 @@ export class FiltersComponent implements OnInit {
         this.stateCount = data;
       }
     })
-
-    console.log(this.stateCount)
-
+    //console.log(this.stateCount)
   }
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(queryParams => {
-      /**
-       * If the query-string is '?genre=rpg&platform=xbox'
-       * the queryParams object will look like
-       * { platform: 'xbox', genre: 'rpg }
-       * */
+     
   });
   }
-
-//   updateQueryParameters() {
-//     this.router.navigate(
-//         [], 
-//         { 
-//             queryParams: { 
-//                 genre: 'rpg'
-//             }, 
-//             queryParamsHandling: 'merge' 
-//         }
-//     );
-// }
-
 
   getUniversities() {
     this.universityService.getAllUniversities().subscribe((data) => {
       this.allUni = data;
-      //console.log(data)
     })
   }
 
@@ -114,7 +96,7 @@ export class FiltersComponent implements OnInit {
 
   getColleges() {
     this.collegeService.getAllColleges().subscribe(data => {this.collegesList = data
-    //console.log(data)
+   
     })
   }
 
@@ -123,57 +105,71 @@ export class FiltersComponent implements OnInit {
   }
 
 
-  // this.products$ = this.route.queryParams.pipe(switchMap(params => {
-  //   const filters = {
-  //     platform: params.platform || "",
-  //     genre: params.genre || ""
-  //   };
-  //   return this.productService.getProducts(filters);
-
-  // }));
-
-
   onCheckboxChangeUni(e: any) {
     if (e.target.checked) {
-      let temp:College[]=[];
-      console.log("Inside changed func")
-            this.universityService.getCollegesInUniversity(e.target.value).subscribe(data =>{
-              data.forEach((element:any) => {
-                    this.store.dispatch(addCollege(element))
-              });
-            })
+      this.checkedUniversities.push(e.target.value) 
+      this.universityService.getCollegesInUniversities(this.checkedUniversities).subscribe(data => {
+        console.log("flter Componet")
+        this.collegeService.setCollegeList(data);
+
+        
+      }
+)
     }
     else {
-      console.log("Unchecked...Then.....")
-      this.universityService.getCollegesInUniversity(e.target.value).subscribe(data =>{
-        data.forEach((element:any) => {
-          this.store.dispatch(removeCollege(element))
-        });
+      var index = this.checkedUniversities.indexOf(e.target.value);
+      this.checkedUniversities.splice(index, 1);
+      this.universityService.getCollegesInUniversities(this.checkedUniversities).subscribe(data => {
+        console.log("filter Component")
+        this.collegeService.setCollegeList(data);
+        
+        
       })
     }
   }
 
   onCheckboxChangeStrm(e: any) {
-    this.streamService.changeStrmCode(e.target.value)
     if (e.target.checked) {
-      console.log(this.filteredColleges)
-      console.log("Inside changed func")
-            this.streamService.getCollegesWithStream(e.target.value).subscribe(data =>{
-              data.forEach((element:any) => {
-                  this.store.dispatch(addCollege(element))
-              });
-            })
-    } else {
-      console.log("Unchecked...Then.....")
-      this.streamService.getCollegesWithStream(e.target.value).subscribe(data =>{
-        data.forEach((element:any) => {
-          this.store.dispatch(removeCollege(element))
-        });
+      this.checkedStreams.push(e.target.value) 
+      this.streamService.getCollegesWithStreams(this.checkedStreams).subscribe(data => {
+        console.log("flter Componet")
+        this.collegeService.setCollegeList(data);
+
+        
+      }
+)
+    } else{
+      var index = this.checkedStreams.indexOf(e.target.value);
+      this.checkedStreams.splice(index, 1);
+      this.streamService.getCollegesWithStreams(this.checkedStreams).subscribe(data => {
+        console.log("filter Component")
+        this.collegeService.setCollegeList(data);
+        
+        
       })
     }
-
   }
 }
+
+
+
+// this.streamService.changeStrmCode(e.target.value)
+// if (e.target.checked) {
+//   console.log(this.filteredColleges)
+//   console.log("Inside changed func")
+//         this.streamService.getCollegesWithStream(e.target.value).subscribe(data =>{
+//           data.forEach((element:any) => {
+//               this.store.dispatch(addCollege(element))
+//           });
+//         })
+// } else {
+//   console.log("Unchecked...Then.....")
+//   this.streamService.getCollegesWithStream(e.target.value).subscribe(data =>{
+//     data.forEach((element:any) => {
+//       this.store.dispatch(removeCollege(element))
+//     });
+//   })
+// }
 
 
 // this.universityService.getUniversity(e.target.value).subscribe({
@@ -191,3 +187,21 @@ export class FiltersComponent implements OnInit {
 //   }
   
 // })
+
+// console.log("Inside changed func")
+// this.universityService.getCollegesInUniversity(e.target.value).subscribe(data =>{
+//   data.forEach((element:any) => {
+//         this.store.dispatch(addCollege(element))
+//   });
+// })
+
+
+// console.log("Unchecked...Then.....")
+//       this.universityService.getCollegesInUniversity(e.target.value).subscribe(data =>{
+//         data.forEach((element:any) => {
+//           this.store.dispatch(removeCollege(element))
+//         });
+//       })
+
+
+

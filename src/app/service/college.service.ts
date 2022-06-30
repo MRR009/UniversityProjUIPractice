@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { College } from '../entity/college.entity';
 
 @Injectable({
@@ -8,18 +8,39 @@ import { College } from '../entity/college.entity';
 })
 export class CollegeService {
 
-  public selectedClgCode : String = "";
+  public selectedClgCode: String = "";
 
-  private filtColleges: College[] = []
-  
-  private baseUrl = 'http://localhost:9099/college';
-  constructor(private http: HttpClient) { }
+  public filtColleges: any
 
-  getcollege(collegeCode: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getbycode/?`+`code=${collegeCode}`);
+  private collegeList = new BehaviorSubject([]);
+
+  private selectedCollegeCode = new Subject();
+
+  public setCollegeList(list: any) {
+    this.collegeList.next(list);
   }
 
-  getAllColleges():Observable<any>{
+  public getCollegeList() {
+    return this.collegeList;
+  }
+
+  public setselectedCollegeCode(code: String){
+    this.selectedClgCode = code;
+  }
+
+  public getselectedCollegeCode(){
+    return this.selectedCollegeCode
+  }
+
+
+  private baseUrl = 'http://localhost:9099/college';
+  constructor(private http: HttpClient) {}
+
+  getcollege(collegeCode: String): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getbycode/?` + `code=${collegeCode}`);
+  }
+
+  getAllColleges(): Observable<any> {
     return this.http.get(`${this.baseUrl}/getall`);
   }
 

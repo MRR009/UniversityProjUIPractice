@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
@@ -10,13 +10,13 @@ export class StreamService {
   private baseUrl = 'http://localhost:9099/stream';
   constructor(private http: HttpClient) { }
 
-  public streamCode: String = "";
-  public subject = new Subject<any>();
-  private streamCodeSource = new  BehaviorSubject(this.streamCode);
-  currentStrmCode = this.streamCodeSource.asObservable();
-  changeStrmCode(message: string) {
-  this.streamCodeSource.next(message)
-  }
+  // public streamCode: String = "";
+  // public subject = new Subject<any>();
+  // private streamCodeSource = new  BehaviorSubject(this.streamCode);
+  // currentStrmCode = this.streamCodeSource.asObservable();
+  // changeStrmCode(message: string) {
+  // this.streamCodeSource.next(message)
+  // }
 
   getStream(streamCode: String): Observable<any> {
     return this.http.get(`${this.baseUrl}/getbycode/?strmCode=$${streamCode}`);
@@ -30,6 +30,17 @@ export class StreamService {
     return this.http.get(`${this.baseUrl}/collegeswithstream?strmCode=${streamCode}`)
   }
 
+  
+  getCollegesWithStreams(streamCodes: String[]):Observable<any>{
+    let queryParams = new HttpParams()
+    // queryParams = queryParams.append("streamCodes", "")
+    streamCodes.forEach(code => {
+      queryParams = queryParams.append("streamCodes",code.toString());
+      //queryParams.set('streamCodes',c)
+    })
+    //console.log(queryParams)
+    return this.http.get(`${this.baseUrl}/collegeswithstreams`, {params:queryParams})
+  }
 
   createStream(employee: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, employee);

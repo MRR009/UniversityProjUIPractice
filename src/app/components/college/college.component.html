@@ -1,7 +1,7 @@
 <div class="container m-0 p-0">
-    <div class="m-0" *ngIf="(stateCount$ | async) > 0">
+    <div class="m-0" *ngIf="(filteredCollegesList.length) > 0">
         <ul class="unordered-list">
-            <li   *ngFor="let college of filteredColleges$ | async" class="">
+            <li   *ngFor="let college of filteredCollegesList" class="">
                 <div  class="college-container mb-4 automate_client_img_snippet col-4">
                     <div style="border-style: solid; border-width: 0px; border-bottom-left-radius: 18px; border-top-right-radius: 18px;" class="  listing-block--default text-uppercase bg-white position-relative ">
                         <div style="cursor: pointer;background-color: rgb(159, 191, 228); border-style: solid; border-width: 0px;border-top-right-radius: 18px;">
@@ -65,7 +65,7 @@
             </li>
         </ul>
     </div>
-    <div *ngIf="(stateCount$ | async) == 0">
+    <div *ngIf="(filteredCollegesList.length) == 0">
         <ul class="unordered-list">
             <li   *ngFor="let college of colleges$ | async" class="">
                 <div  class="college-container mb-4 automate_client_img_snippet col-4">

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { University } from '../entity/university.entity';
@@ -42,6 +42,14 @@ export class UniversityService {
 
   getCollegesInUniversity(uniCode: String):Observable<any>{
     return this.http.get(`${this.baseUrl}/collegesinuniversity?uniCode=${uniCode}`)
+  }
+
+  getCollegesInUniversities(universityCodes: String[]):Observable<any>{
+    let queryParams = new HttpParams()
+    universityCodes.forEach(code => {
+      queryParams = queryParams.append("universityCodes",code.toString());
+    })
+    return this.http.get(`${this.baseUrl}/collegesinuniversities`, {params:queryParams})
   }
 
   createUniversity(employee: Object): Observable<Object> {

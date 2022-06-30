@@ -13,6 +13,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { CollegeDetailsComponent } from './components/college-details/college-details.component';
+import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 
 const routes: Routes = [
   {path: "" , redirectTo:"home",pathMatch: "full"},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: "filters" , component: FiltersComponent },
   {path: "sidebar" , component: SidebarComponent},
   {path: "login", component:LoginComponent},
-  {path: "college-details", component:CollegeDetailsComponent}
+  {path: "college-details", component:CollegeDetailsComponent},
+  {path: "admin-home", component:AdminhomeComponent}
 ];
 
 @NgModule({
