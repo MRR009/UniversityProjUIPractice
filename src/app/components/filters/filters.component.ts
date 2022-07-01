@@ -7,6 +7,7 @@ import { College } from 'src/app/entity/college.entity';
 import { University } from 'src/app/entity/university.entity';
 import { AddressService } from 'src/app/service/address.service';
 import { CollegeService } from 'src/app/service/college.service';
+import { CourseService } from 'src/app/service/course.service';
 import { StreamService } from 'src/app/service/stream.service';
 import { UniversityService } from 'src/app/service/university.service';
 import { addCollege, removeCollege } from 'src/app/store/colleges.actions';
@@ -35,6 +36,7 @@ export class FiltersComponent implements OnInit {
   allUni: any
   allStreams: any
   stateCount: any
+  allCourses: any
   collegesList: any[] = []
   filteredColleges: any[] = []
   checkedStreams: any[] = []
@@ -48,6 +50,7 @@ export class FiltersComponent implements OnInit {
     private collegeService: CollegeService,
     private streamService: StreamService,
     private addressService: AddressService,
+    private courseService: CourseService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private store: Store
@@ -58,6 +61,7 @@ export class FiltersComponent implements OnInit {
     this.getStreams();
     this.getColleges();
     this.getAddresses();
+    this.getCourses();
     this.store.select(filteredColleges).subscribe({
       next: (data) => {
       this.filteredColleges = data
@@ -98,6 +102,10 @@ export class FiltersComponent implements OnInit {
     this.collegeService.getAllColleges().subscribe(data => {this.collegesList = data
    
     })
+  }
+
+  getCourses(){
+    this.courseService.getAllCourses().subscribe(data => {console.log(data),this.allCourses = data})
   }
 
   getAddresses(){
