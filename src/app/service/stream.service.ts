@@ -10,16 +10,12 @@ export class StreamService {
   private baseUrl = 'http://localhost:9099/stream';
   constructor(private http: HttpClient) { }
 
-  // public streamCode: String = "";
-  // public subject = new Subject<any>();
-  // private streamCodeSource = new  BehaviorSubject(this.streamCode);
-  // currentStrmCode = this.streamCodeSource.asObservable();
-  // changeStrmCode(message: string) {
-  // this.streamCodeSource.next(message)
-  // }
-
   getStream(streamCode: String): Observable<any> {
     return this.http.get(`${this.baseUrl}/getbycode/?strmCode=$${streamCode}`);
+  }
+
+  getByStreamName(streamName: String): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getbyname?strmName=${streamName}`);
   }
 
   getAllStream():Observable<any>{
@@ -43,11 +39,19 @@ export class StreamService {
   }
 
   createStream(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, employee);
+    return this.http.post(`${this.baseUrl}/add`, employee);
   }
 
   updateStream(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
+  }
+
+  updateStreamName(streamName: String, newName: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatestreamname?streamName=${streamName}&newName=${newName}`, value);
+  }
+
+  updateStreamCode(streamName: String, newCode: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatestreamcode?streamName=${streamName}&newCode=${newCode}`, value);
   }
 
   depricateStream(id: number): Observable<any> {
@@ -55,3 +59,7 @@ export class StreamService {
   }
   
 }
+function value(arg0: string, value: any): Observable<Object> {
+  throw new Error('Function not implemented.');
+}
+

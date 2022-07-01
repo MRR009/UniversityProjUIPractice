@@ -1,1 +1,274 @@
-<p>cucourse works!</p>
+<!-- <div class="bg-container">
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+        
+        <form [formGroup] = "courseForm" (ngSubmit) ="onSubmitCourse()" class="m-3 mt-4">
+            <h1 class="text-center">Create Course</h1>
+            <p  class="crediential-names mt-3">courseCode</p>
+            <input type="text" placeholder="Enter courseCode"  formControlName="courseCode">
+            <br> 
+            <span style="color: red;" class="warning-msg" *ngIf="courseF.courseCode && courseF.courseCode.invalid && courseF.courseCode.touched">*Required</span>
+            <p class="crediential-names mt-3">courseName</p>
+            <input type="text" placeholder="Enter courseName" formControlName="courseName">
+            <br>
+           
+            <p class="crediential-names mt-3">courseFee</p>
+            <input type="text" placeholder="Enter courseFee" formControlName="courseFee">
+            <br>
+            <p class="crediential-names mt-3">courseDuration</p>
+            <input type="text" placeholder="Enter courseDuration" formControlName="courseDuration">
+            <br>
+         
+            <div class="crediential-names mt-3">
+                <label class="form-title">CollegeType :</label>
+                <select  formControlName="courseType" class="form-control w-100 p-0">
+                    <option selected value="1">--select CollegeType--</option>
+                    <option value = {{ct}} class="option-styles" *ngFor="let ct of courseType">{{ct}}</option>
+                </select>
+            </div>
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-primary m-0 border border-dark" >Create</button>
+            </div>
+            <br>
+
+          
+            
+            <br>
+        </form>
+    </div>
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+
+        <form [formGroup] = "courseUpdateForm" (ngSubmit) ="onSubmitCourseUpdate(courseF2.updatingValue.value)" class="m-3 mt-4">
+            <h1 class="text-center">Update Course</h1>
+            <p  class="crediential-names mt-3">courseName</p>
+            <input type="text" placeholder="Enter courseName" formControlName="courseName"><span (click)="getCourse(courseF2.courseName.value)"><i class="fab fa-accessible-icon"></i></span>
+            <br> 
+          
+            <div class="crediential-names mt-3">
+                <label class="form-title">CourseDetails :</label>
+                <select #sel (change)="onChange(sel.value)"  class="form-control w-100 p-0">
+                    <option selected value="1">--select courseDetail--</option>
+                    <option class="option-styles" *ngFor="let cd of courseDetails">{{cd}}</option>
+                </select>
+            </div>
+
+            <p class="crediential-names mt-3">existing {{selectOptionValue}} value</p>
+            <p class="crediential-names mt-3">{{selectOptionValue2}}</p>
+          
+            <br>
+          
+            <p class="crediential-names mt-3">Updating Value</p>
+            <input type="text" placeholder="Enter courseDuration" formControlName="updatingValue">
+            <br>
+            
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-success m-0 border border-dark" >Update</button>
+            </div>
+            <br>
+
+            
+            <br>
+        </form>
+    </div>
+</div>
+<div class="bg-container">
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+        <form [formGroup] = "collegeForm" (ngSubmit) ="onSubmitCollege()" class="m-3 mt-4">
+            <h1 class="text-center">Create College</h1>
+            <p  class="crediential-names mt-3">collegeCode</p>
+            <input type="text" placeholder="Enter courseCode"  formControlName="collegeCode">
+            <br> 
+            <span style="color: red;" class="warning-msg" *ngIf="courseF.courseCode && courseF.courseCode.invalid && courseF.courseCode.touched">*Required</span>
+            <p class="crediential-names mt-3">collegeName</p>
+            <input type="text" placeholder="Enter collegeName" formControlName="collegeName">
+            <br>
+           
+            <p class="crediential-names mt-3">collegeDescription</p>
+            <input type="text" placeholder="Enter collegeDescription" formControlName="collegeDescription">
+            <br>
+            <p class="crediential-names mt-3">collegeImage</p>
+            <input type="text" placeholder="Enter collegeImage" formControlName="collegeImage">
+            <br>
+            <p class="crediential-names mt-3">collegeLogo</p>
+            <input type="text" placeholder="Enter collegeLogoLink" formControlName="collegeLogo">
+            <br>
+            <p class="crediential-names mt-3">establishedIn</p>
+            <input type="text" placeholder="Enter establishedInYear" formControlName="establishedIn">
+            <br>
+            <p class="crediential-names mt-3">collegeLink</p>
+            <input type="text" placeholder="Enter collegeLink" formControlName="collegeLink">
+            <br>
+      
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-primary m-0 border border-dark" >Create</button>
+            </div>
+            <br>
+
+            
+            <br>
+        </form>
+    </div>
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+    
+        <form [formGroup] = "collegeUpdateForm" (ngSubmit) ="onSubmitCollegeUpdate(collegeF2.updatingValue.value)" class="m-3 mt-4">
+            <h1 class="text-center">Update College</h1>
+            <p  class="crediential-names mt-3">collegeName</p>
+            <input type="text" placeholder="Enter collegeName" formControlName="collegeName"><span (click)="getCollege(collegeF2.collegeName.value)"><i class="fab fa-accessible-icon"></i></span>
+            <br> 
+ 
+            <div class="crediential-names mt-3">
+                <label class="form-title">collegeDetails :</label>
+                <select #sele (change)="onChangeCollege(sele.value)"  class="form-control w-100 p-0">
+                    <option selected value="1">--select collegeDetails--</option>
+                    <option class="option-styles" *ngFor="let cd of collegeDetails">{{cd}}</option>
+                </select>
+            </div>
+    
+            <p class="crediential-names mt-3">existing {{clgSelectOptionValue}} value</p>
+            <p class="crediential-names mt-3">{{clgSelectOptionValue2}}</p>
+    
+            <br>
+  
+            <p class="crediential-names mt-3">Updating Value</p>
+            <input type="text" placeholder="Enter updating value" formControlName="updatingValue">
+            <br>
+       
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-success m-0 border border-dark" >Update</button>
+            </div>
+            <br>
+
+            
+            <br>
+        </form>
+    </div>
+</div>
+<div class="bg-container">
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+  
+        <form [formGroup] = "streamForm" (ngSubmit) ="onSubmitStream()" class="m-3 mt-4">
+            <h1 class="text-center">Create Stream</h1>
+            <p  class="crediential-names mt-3">streamCode</p>
+            <input type="text" placeholder="Enter streamCode"  formControlName="streamCode">
+            <br> 
+            <span style="color: red;" class="warning-msg" *ngIf="streamF.streamCode&& streamF.streamCode.invalid && streamF.streamCode.touched">*Required</span>
+            <p class="crediential-names mt-3">streamName</p>
+            <input type="text" placeholder="Enter streamName" formControlName="streamName">
+            <br>
+    
+           
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-primary m-0 border border-dark" >Create</button>
+            </div>
+            <br>
+
+      
+            
+            <br>
+        </form>
+    </div>
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+    
+        <form [formGroup] = "streamUpdateForm" (ngSubmit) ="onSubmitStreamUpdate(streamF2.updatingValue.value)" class="m-3 mt-4">
+            <h1 class="text-center">Update Stream</h1>
+            <p  class="crediential-names mt-3">streamName</p>
+            <input type="text" placeholder="Enter streamName" formControlName="streamName"><span (click)="getStream(streamF2.streamName.value)"><i class="fab fa-accessible-icon"></i></span>
+            <br> 
+            <div class="crediential-names mt-3">
+                <label class="form-title">collegeDetails :</label>
+                <select #selec (change)="onChangeStream(selec.value)"  class="form-control w-100 p-0">
+                    <option selected value="1">--select streamDetails--</option>
+                    <option class="option-styles" *ngFor="let sd of streamDetails">{{sd}}</option>
+                </select>
+            </div>
+           
+            <p class="crediential-names mt-3">existing {{strSelectOptionValue}} value</p>
+            <p class="crediential-names mt-3">{{strSelectOptionValue2}}</p>
+            <br>
+          
+            <p class="crediential-names mt-3">Updating Value</p>
+            <input type="text" placeholder="Enter updating value" formControlName="updatingValue">
+            <br>
+          
+         
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-success m-0 border border-dark" >Update</button>
+            </div>
+            <br>
+
+           
+            
+            <br>
+        </form>
+    </div>
+</div>
+<div class="bg-container">
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+        
+        <form [formGroup] = "universityForm" (ngSubmit) ="onSubmitUniversity()" class="m-3 mt-4">
+            <h1 class="text-center">Create University</h1>
+            <p  class="crediential-names mt-3">universityCode</p>
+            <input type="text" placeholder="Enter universityCode"  formControlName="universityCode">
+            <br> 
+            <span style="color: red;" class="warning-msg" *ngIf="streamF.streamCode&& streamF.streamCode.invalid && streamF.streamCode.touched">*Required</span>
+            <p class="crediential-names mt-3">universityName</p>
+            <input type="text" placeholder="Enter universityName" formControlName="universityName">
+            <br>
+            <p class="crediential-names mt-3">establishedIn</p>
+            <input type="text" placeholder="Enter establishedIn" formControlName="establishedIn">
+            <br>
+           
+           
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-primary m-0 border border-dark" >Create</button>
+            </div>
+            <br>
+
+          
+            
+            <br>
+        </form>
+    </div>
+    <div class="form-container shadow-lg p-4 mb-5 bg-black rounded">
+        
+        <form [formGroup] = "universityUpdateForm" (ngSubmit) ="onSubmitUniversityUpdate(universityF2.updatingValue.value)" class="m-3 mt-4">
+            <h1 class="text-center">Update University</h1>
+            <p  class="crediential-names mt-3">universityName</p>
+            <input type="text" placeholder="Enter universityName" formControlName="universityName"><span (click)="getUniversity(universityF2.universityName.value)"><i class="fab fa-accessible-icon"></i></span>
+            <br> 
+            <div class="crediential-names mt-3">
+                <label class="form-title">University Details :</label>
+                <select #select (change)="onChangeUniversity(select.value)"  class="form-control w-100 p-0">
+                    <option selected value="1">--select universityDetails--</option>
+                    <option class="option-styles" *ngFor="let ud of univeristyDetails">{{ud}}</option>
+                </select>
+            </div>
+           
+            <p class="crediential-names mt-3">existing {{uniSelectOptionValue}} value</p>
+            <p class="crediential-names mt-3">{{uniSelectOptionValue2}}</p>
+            
+            <br>
+           
+            <p class="crediential-names mt-3">Updating Value</p>
+            <input type="text" placeholder="Enter updating value" formControlName="updatingValue">
+            <br>
+           
+         
+            <br>
+            <div class="text-center m-0">
+               <button type="submit" class="btn btn-success m-0 border border-dark" >Update</button>
+            </div>
+            <br>
+
+            
+            
+            <br>
+        </form>
+    </div>
+</div> -->

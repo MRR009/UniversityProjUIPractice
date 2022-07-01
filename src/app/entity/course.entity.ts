@@ -8,7 +8,7 @@ export class College{
   courseName:String = "";
   courseFee: number = 0;
   courseDuration: number = 0;
-  courseType: coursType | undefined ;
+  //courseType: coursType | undefined ;
   
   
     

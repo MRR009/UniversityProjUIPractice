@@ -8,7 +8,6 @@ export class College{
     collegeDescription: String = "";
     collegeImage: String = "";
     collegeLogo: String = "";
+    collegeLink: String = "";
     establishedIn: number = 1111;
-    university: University | undefined;
-    universityCode: String = "";
 }

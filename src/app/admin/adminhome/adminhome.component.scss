@@ -1,5 +1,5 @@
 .form-container{
-    background-image: url("https://w0.peakpx.com/wallpaper/493/292/HD-wallpaper-grayishblue-blue-colour-gray-plain-background.jpg");
+    background-image:linear-gradient(rgb(159, 191, 228),rgba(7, 29, 43, 0.651));
     background-size: 90%;
     border-radius: 10px;
     min-height: 55vh;
@@ -8,6 +8,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin:20px;
+    text-align: center;
     
 }
 .crediential-names{
@@ -25,7 +26,7 @@
 }
 
 .bg-container{
-    background-image:linear-gradient(rgb(33, 110, 91),rgba(7, 43, 41, 0.651));
+    background-image:linear-gradient(rgb(159, 191, 228),rgba(7, 29, 43, 0.651));
     background-size: 100%;
     min-height: 100vh;
     opacity: 0.9;

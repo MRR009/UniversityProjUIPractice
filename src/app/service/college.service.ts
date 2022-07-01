@@ -37,7 +37,11 @@ export class CollegeService {
   constructor(private http: HttpClient) {}
 
   getcollege(collegeCode: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getbycode/?` + `code=${collegeCode}`);
+    return this.http.get(`${this.baseUrl}/getbycode?` + `code=${collegeCode}`);
+  }
+
+  getcollegeByName(collegeName: String): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getbyname?collegeName=${collegeName}`);
   }
 
   getAllColleges(): Observable<any> {
@@ -53,7 +57,48 @@ export class CollegeService {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
+  updateCollegeName(collegeName: String, newName: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegename?collegeName=${collegeName}&newName=${newName}`, value);
+  }
+
+  updateCollegeCode(collegeName: String, newCode: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegecode?collegeName=${collegeName}&newName=${newCode}`, value);
+  }
+
+  updateCollegeEst(collegeName: String, newEstabYear: number): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegeest?collegeName=${collegeName}&newEstabYear=${newEstabYear}`, value);
+  }
+
+  updateCollegeInfo(collegeName: String, newColegeInfo: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegeinfo?collegeName=${collegeName}&newColegeInfo=${newColegeInfo}`, value);
+  }
+
+  updateCollegeType(collegeName: String, newType: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegetype?collegeName=${collegeName}&newType=${newType}`, value);
+  }
+
+  updateCollegeDescription(collegeName: String, newCollegeDescription: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegedescription?collegeName=${collegeName}&newCollegeDescription=${newCollegeDescription}`, value);
+  }
+
+  updateCollegeLogo(collegeName: String, newCollegeLogo: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegelogo?collegeName=${collegeName}&newCollegeLogo=${newCollegeLogo}`, value);
+  }
+
+  updateCollegeImage(collegeName: String, newCollegeImage: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegeimage?collegeName=${collegeName}&newCollegeImage=${newCollegeImage}`, value);
+  }
+
+  updateCollegeLink(collegeName: String, newCollegeLink: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecollegelink?collegeName=${collegeName}&newCollegeLink=${newCollegeLink}`, value);
+  }
+
+
   depricateCollege(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 }
+function value(arg0: string, value: any): Observable<Object> {
+  throw new Error('Function not implemented.');
+}
+

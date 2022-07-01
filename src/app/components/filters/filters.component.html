@@ -22,6 +22,17 @@
         </div>
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
+        <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="courses.toggle()" mdbWavesEffect>
+            Course <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
+        <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #courses="bs-collapse">
+            <p class="fm-container pl-2" *ngFor="let course of allCourses let i=index">
+                <input class="checkbox" type="checkbox" id="stream" [value]="course.courseCode" name="stream"
+                    (change)="onCheckboxChangeStrm($event)">
+                <label for="stream">{{course.courseName}}</label>
+            </p>
+        </div>
+    </ul>
+    <!-- <ul class="navbar-nav ml-auto nav-flex-icons">
         <a color="primary" class="waves-light m20-right d-flex justify-content-between align-items-center filter-style pl-2 pr-2" type="button" (click)="state.toggle()" mdbWavesEffect>
             State <mdb-icon fas icon="caret-down caret" class="m20-left"></mdb-icon></a>
         <div class="mt-2 pl-2 navbar-scroll" mdbCollapse #state="bs-collapse">
@@ -42,7 +53,7 @@
                 <label for="stream">{{address.city}}</label>
             </p>
         </div>
-    </ul>
+    </ul> -->
 </form>
 
 <!-- <button [routerLink]="[routerLinkVariable]" [queryParams]="{ genre: 'rpg' }" queryParamsHandling="merge">RPG</button>

@@ -48,13 +48,13 @@ export class CollegeComponent implements OnInit {
       console.log(val);
       this.filteredCollegesList = val;
       console.log(this.filteredCollegesList.length)
-      this.getColleges();
+      
+    })
+    this.getColleges();
       this.filteredColleges$ = this.store.select(filteredColleges)
       this.stateCount$ = this.store.select(filterTriggered)
       //this.store.select(filteredColleges).subscribe(data => console.log(data))
       this.collegesList = this.collegeService.filtColleges;
-    })
-
   }
 
   getColleges() {

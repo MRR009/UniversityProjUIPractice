@@ -42,4 +42,16 @@ export class CucollegeComponent implements OnInit {
     // }
   }
 
+
+
+  // AddAddress(){
+  //   document.getElementById("AddAddressContainer")?.classList.remove("d-none");
+  //   document.getElementById("ListAddressContainer")?.classList.add("d-none");
+  //   document.getElementById("UpdateMobileContainer")?.classList.add("d-none");
+  //   document.getElementById("UpdatePasswordContainer")?.classList.add("d-none");
+  //   document.getElementById("UpdateEmailContainer")?.classList.add("d-none");
+  // }
+
+
+
 }

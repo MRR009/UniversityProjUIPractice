@@ -36,6 +36,11 @@ export class UniversityService {
     return this.http.get(`${this.baseUrl}/getbycode?uniCode=${uniCode}`);
   }
 
+  getUniversityByName(uniName: String): Observable<any> {
+    console.log(uniName)
+    return this.http.get(`${this.baseUrl}/getbyname?name=${uniName}`);
+  }
+
   getAllUniversities():Observable<any>{
     return this.http.get(`${this.baseUrl}/getall`);
   }
@@ -53,7 +58,19 @@ export class UniversityService {
   }
 
   createUniversity(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, employee);
+    return this.http.post(`${this.baseUrl}/add`, employee);
+  }
+
+  updateUniversityName(uniName: String, newName: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatename?universityName=${uniName}&newName${newName}`, value);
+  }
+
+  updateUniversityCode(uniName: String, newCode: String): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updatecode?universityName=${uniName}&newCode${newCode}`, value);
+  }
+
+  updateUniversityEst(uniName: String, newEstb: number): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/updateestablished?universityName=${uniName}&newEstb=${newEstb}`, value);
   }
 
   updateUniversity(id: number, value: any): Observable<Object> {
@@ -73,3 +90,7 @@ export class UniversityService {
 // }
 
 }
+function value(arg0: string, value: any): Observable<Object> {
+  throw new Error('Function not implemented.');
+}
+
